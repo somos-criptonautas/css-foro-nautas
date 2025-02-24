@@ -1,0 +1,30 @@
+#main-outlet-wrapper #main-outlet {
+  margin-top: 20px;
+  height: 85vh;
+  overflow: scroll;
+  padding: 16px 24px;
+  width: calc(100% - 48px);
+  max-width: 1000px;
+  background: radial-gradient(
+      600px 600px at 50% 75%,
+      rgba(188, 241, 238, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
+    radial-gradient(
+      600px 600px at 75% 50%,
+      rgba(162, 165, 225, 0.2),
+      rgba(255, 255, 255, 0)
+    );
+  background-color: light-dark(#ffffff, #000000);
+  border-radius: var(--d-border-radius-large);
+  border: 1px solid var(--primary-low);
+  box-shadow: 0 10px 24px 4px #e2e8f8, 0 0 0 2px #e2e8f8;
+}
+
+.archetype-regular #main-outlet-wrapper #main-outlet {
+  background: light-dark(#ffffff, #000000);
+}
+
+body.has-full-page-chat #main-outlet-wrapper #main-outlet {
+  max-width: 1000px;
+}

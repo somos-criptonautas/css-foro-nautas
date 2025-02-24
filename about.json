@@ -9,5 +9,18 @@
   "maximum_discourse_version": null,
   "assets": {},
   "modifiers": {},
-  "color_schemes": {}
+  "color_schemes": {
+    "next_gen": {
+      "primary": "1A1A1A",
+      "secondary": "F5F8FF",
+      "header_background": "F5F8FF",
+      "tertiary": "595bca"
+    },
+    "next_gen_dark": {
+      "primary": "F5F8FF",
+      "secondary": "1A1A1A",
+      "header_background": "1A1A1A",
+      "tertiary": "595bca"
+    }
+  }
 }
