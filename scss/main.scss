@@ -1,10 +1,10 @@
-#main-outlet-wrapper #main-outlet {
-  margin-top: 20px;
+body:not(.archetype-regular, .has-full-page-chat)
+  #main-outlet-wrapper
+  #main-outlet {
   height: 85vh;
   overflow: scroll;
   padding: 16px 24px;
-  width: calc(100% - 48px);
-  max-width: 1000px;
+  border-radius: var(--d-border-radius-large);
   background: radial-gradient(
       600px 600px at 50% 75%,
       rgba(188, 241, 238, 0.2),
@@ -16,15 +16,43 @@
       rgba(255, 255, 255, 0)
     );
   background-color: light-dark(#ffffff, #000000);
+}
+
+#main-outlet-wrapper #main-outlet {
   border-radius: var(--d-border-radius-large);
-  border: 1px solid var(--primary-low);
-  box-shadow: 0 10px 24px 4px #e2e8f8, 0 0 0 2px #e2e8f8;
+  //   padding: 0 24px;
+  box-shadow: 0 10px 24px 4px #e2e8f8, 0 0 0 3px #e2e8f8,
+    0 0 0 1px var(--primary-low);
+  width: calc(100% - 48px);
+  max-width: 1000px !important;
+  background: radial-gradient(
+      600px 600px at 50% 75%,
+      rgba(188, 241, 238, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
+    radial-gradient(
+      600px 600px at 75% 50%,
+      rgba(162, 165, 225, 0.2),
+      rgba(255, 255, 255, 0)
+    );
+  background-color: light-dark(#ffffff, #000000);
 }
 
-.archetype-regular #main-outlet-wrapper #main-outlet {
-  background: light-dark(#ffffff, #000000);
+#topic-title {
+  z-index: 999;
+  margin-bottom: 1em;
+  padding: 0.5em 24px;
+  position: sticky;
+  top: 0;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
-body.has-full-page-chat #main-outlet-wrapper #main-outlet {
-  max-width: 1000px;
+.container.posts,
+.more-topics__container,
+#topic-footer-buttons {
+  padding: 0 24px;
 }
