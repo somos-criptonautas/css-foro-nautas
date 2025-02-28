@@ -1,7 +1,7 @@
 .post-stream {
   .contents p {
     // font-size: var(--font-up-1);
-    line-height: 1.75;
+    line-height: 1.25;
   }
 }
 
@@ -67,4 +67,10 @@
 
 .discourse-post-event .discourse-post-event-widget {
   background: var(--d-content-background);
+}
+
+.more-topics__container .nav {
+  position: unset;
+  margin-block: unset;
+  margin-bottom: 1em;
 }
