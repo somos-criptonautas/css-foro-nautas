@@ -2,18 +2,136 @@
   --d-button-border-radius: 6.25rem;
 }
 
-.btn {
-  padding: 0.5em 1rem;
+.discourse-no-touch .topic-body .actions .fade-out {
+  transition: none;
 }
 
-.btn-default {
-  border: 1px solid var(--accent-color);
-  background: var(--secondary);
+.btn-default,
+.btn-primary,
+.btn-danger,
+.select-kit .select-kit-header {
+  padding: var(--spacing-block-s) var(--spacing-inline-m);
+  // font-size: var(--font-up-1-rem);
+  // border-radius: var(--d-button-border-radius);
+
+  &.no-text {
+    padding-inline: 0.665rem;
+  }
 }
+
+.sidebar-new-topic-button__wrapper .topic-drafts-menu-trigger.btn.no-text {
+  background: var(--accent-color);
+  &:hover {
+    background: radial-gradient(
+        90% 110% at 50% 50%,
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(255, 255, 255, 0) 100%
+      ),
+      var(--accent-color);
+  }
+  svg {
+    color: var(--secondary);
+  }
+}
+
+.btn-default,
+.select-kit .select-kit-header {
+  border: 1px solid var(--accent-color);
+  //id like to use rgba of the accent colour but how to derive that?
+  // box-shadow: 0px 0px 8px 2px oklch(from (var(--accent-color)) calc(l * 2) calc(c * 0.125) h);
+  background: var(--secondary);
+
+  .d-icon {
+    color: var(--accent-color);
+  }
+  &:hover {
+    .discourse-no-touch & {
+      border: 1px solid transparent;
+      box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.1);
+      background: var(--secondary);
+      color: var(--accent-color);
+      .d-icon {
+        color: var(--accent-color);
+      }
+    }
+  }
+  &:focus-visible {
+    .discourse-no-touch & {
+      background: var(--secondary);
+      color: var(--accent-color);
+      box-shadow: 0px 0px 0px 2px var(--secondary),
+        0px 0px 0px 4px var(--accent-color);
+      .d-icon {
+        color: var(--accent-color);
+      }
+    }
+  }
+}
+//not shared with select-kit
+.btn-default {
+  &:active {
+    .discourse-no-touch & {
+      color: var(--secondary);
+      background: oklch(from var(--accent-color) 30% c h) !important;
+      .d-icon {
+        color: var(--secondary);
+      }
+    }
+  }
+}
+.btn-primary,
 #create-topic.btn {
   background-color: var(--accent-color);
   color: var(--accent-text-color);
-  svg {
+  .d-icon {
     color: var(--accent-text-color);
   }
+  &:hover {
+    .discourse-no-touch & {
+      background: radial-gradient(
+          90% 110% at 50% 50%,
+          rgba(255, 255, 255, 0.3) 0%,
+          rgba(255, 255, 255, 0) 100%
+        ),
+        var(--accent-color);
+      box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.15);
+    }
+  }
+  &:focus-visible {
+    .discourse-no-touch & {
+      background: radial-gradient(
+          90% 110% at 50% 50%,
+          rgba(255, 255, 255, 0.3) 0%,
+          rgba(255, 255, 255, 0) 100%
+        ),
+        var(--accent-color);
+      box-shadow: 0px 0px 0px 2px var(--secondary),
+        0px 0px 0px 4px var(--accent-color);
+    }
+  }
+  &:active {
+    .discourse-no-touch & {
+      // background: radial-gradient(
+      //     65% 95% at 50% 50%,
+      //     rgba(0, 0, 0, 0.4) 0%,
+      //     rgba(0, 0, 0, 0) 100%
+      //   ),
+      //   var(--accent-color) !important;
+      background: oklch(from var(--accent-color) 30% c h) !important;
+    }
+  }
+}
+
+.post-controls {
+  svg.d-icon {
+    color: inherit !important; //something we should honestly implement in core imo, when do we ever NOT want the same colour for icon and text?
+  }
+}
+
+//undoing the outline for select-kit, since Im using a custom visual cue
+.select-kit.single-select.is-expanded .select-kit-header:not(.btn),
+.select-kit.single-select .select-kit-header:not(.btn):focus,
+.select-kit.single-select .select-kit-header:not(.btn):active {
+  outline: transparent;
+  border-color: var(--accent-color);
 }

@@ -1,9 +1,35 @@
 :root {
   --d-border-radius-large: 20px;
-  --d-border-radius: 6px;
+  --d-border-radius: 8px;
   --d-input-border-radius: 6px;
-  --accent-color: #595bca;
+  --accent-color: #3c41c3;
   --accent-text-color: #ffffff;
+  --d-content-background: #fff;
   --d-nav-color--active: var(--accent-color);
-  --primary: #0c0d27;
+  --primary: #14171f;
+  --header-background: #f5f8ff;
+  --d-post-control-background--hover: #ebecf9;
+  --d-post-control-text-color--hover: #242775;
+  --d-sidebar-link-color: var(--primary);
+  --d-sidebar-highlight-color: var(--primary);
+  --d-sidebar-link-icon-color: #8591ad;
+  --d-sidebar-section-link-icon-size: 1em;
+  --d-sidebar-highlight-background: #ebecf9;
+  --d-sidebar-active-background: #d8d9f3;
+  // --d-sidebar-row-height: 2.8em;
+  //the idea is: block spacing can grow with font-size, but inline spacing should not to maintain horizontal (text) alignment
+  --spacing-block-xs: 0.25em;
+  --spacing-block-s: 0.5em;
+  --spacing-block-sm: 0.75em;
+  --spacing-block-m: 1em;
+  --spacing-block-l: 1.5em;
+  --spacing-block-xl: 2em;
+  --spacing-block-xxl: 4em;
+  --spacing-inline-xs: 0.25em;
+  --spacing-inline-s: 0.5rem;
+  --spacing-inline-sm: 0.75rem;
+  --spacing-inline-m: 1rem;
+  --spacing-inline-l: 1.5rem;
+  --spacing-inline-xl: 2rem;
+  --spacing-inline-xxl: 4rem;
 }
