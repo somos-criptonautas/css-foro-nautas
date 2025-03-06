@@ -34,8 +34,20 @@
   }
 }
 
-.btn-default.sidebar-new-topic-button {
+.discourse-no-touch .btn-default.sidebar-new-topic-button {
   border: none;
+  &:hover {
+    border: none;
+  }
+}
+
+.discourse-no-touch .btn-default.topic-drafts-menu-trigger {
+  border: none;
+  margin-left: 2px;
+  &:hover {
+    border: none;
+    box-shadow: none;
+  }
 }
 
 .btn-default {
