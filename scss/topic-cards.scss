@@ -1,16 +1,3 @@
-// 390x844 – mobile/portrait – (Figma iPhone 13 & 14)
-// 744x1133 – tablet/portrait – (Figma iPad mini 8.3)
-// 1280x832 – desktop small – (Figma MacBook Air)
-
-:root {
-  --hot-color: oklch(63.79% 0.1823 34.77);
-}
-
-$extra-small: 435px;
-$small: 576px;
-$medium: 980px;
-$extra-large: 1280px;
-
 .topic-list .topic-list-item-separator {
   display: none;
 }
@@ -29,6 +16,11 @@ $extra-large: 1280px;
   gap: 1em;
   @include breakpoint(medium) {
     gap: 0.5em;
+    padding: 0 0.5em;
+  }
+  @include breakpoint(mobile-extra-large) {
+    gap: 0;
+    padding: 0;
   }
 }
 
@@ -46,7 +38,7 @@ $extra-large: 1280px;
       margin: 0;
     }
   }
-  @media screen and (max-width: $medium) {
+  @include breakpoint(large) {
     grid-template-columns: 44px min-content min-content auto min-content min-content min-content;
     grid-template-rows: 22px minmax(22px, auto);
     grid-template-areas:
@@ -54,7 +46,7 @@ $extra-large: 1280px;
       ". topic-title topic-title topic-title . . likes-replies"
       ". topic-title topic-title topic-title . . category";
   }
-  @media screen and (max-width: $small) {
+  @include breakpoint(mobile-extra-large) {
     grid-template-columns: 25px auto repeat(6, 1fr);
     grid-template-rows: auto auto auto;
     grid-template-areas:
@@ -79,7 +71,7 @@ body.user-messages-page .topic-list-item {
       "avatar topic-title topic-title topic-title topic-title . . ."
       ". excerpt excerpt excerpt excerpt excerpt . ."
       ". excerpt excerpt excerpt excerpt excerpt likes-replies likes-replies";
-    @media screen and (max-width: $extra-large) {
+    @include breakpoint(extra-large) {
       grid-template-areas:
         "avatar author status status . . . activity"
         "avatar topic-title topic-title topic-title topic-title . . ."
@@ -87,7 +79,7 @@ body.user-messages-page .topic-list-item {
         ". excerpt excerpt excerpt excerpt excerpt . likes-replies";
     }
   }
-  @media screen and (max-width: $small) {
+  @include breakpoint(mobile-extra-large) {
     grid-template-columns: 25px auto repeat(6, 1fr);
     grid-template-rows: auto auto;
     grid-template-areas:
@@ -120,14 +112,14 @@ body.user-messages-page .topic-list-item {
       "avatar topic-title topic-title topic-title topic-title . . ."
       ". excerpt excerpt excerpt excerpt excerpt . ."
       ". excerpt excerpt excerpt excerpt excerpt likes-replies category";
-    @media screen and (max-width: $extra-large) {
+    @include breakpoint(extra-large) {
       grid-template-areas:
         "avatar author status status . . . activity"
         "avatar topic-title topic-title topic-title topic-title . . ."
         ". excerpt excerpt excerpt excerpt excerpt . likes-replies"
         ". excerpt excerpt excerpt excerpt excerpt . category";
     }
-    @media screen and (max-width: $small) {
+    @include breakpoint(mobile-extra-large) {
       grid-template-columns: 25px auto repeat(6, 1fr);
       grid-template-rows: auto auto auto;
       grid-template-areas:
@@ -139,7 +131,7 @@ body.user-messages-page .topic-list-item {
       }
     }
   }
-  @media screen and (max-width: $medium) {
+  @include breakpoint(large) {
     grid-template-columns: 44px min-content min-content auto min-content min-content min-content;
     grid-template-rows: 22px minmax(22px, auto);
     grid-template-areas:
@@ -147,7 +139,7 @@ body.user-messages-page .topic-list-item {
       ". topic-title topic-title topic-title . . likes-replies"
       ". topic-title topic-title topic-title . . category";
   }
-  @media screen and (max-width: $small) {
+  @include breakpoint(mobile-extra-large) {
     grid-template-columns: 25px auto repeat(6, 1fr);
     grid-template-rows: auto auto auto;
     grid-template-areas:
@@ -155,7 +147,7 @@ body.user-messages-page .topic-list-item {
       "topic-title topic-title topic-title topic-title topic-title topic-title topic-title topic-title"
       "avatar author . . . . . likes-replies";
   }
-  @include breakpoint(medium) {
+  @include breakpoint(mobile-extra-large) {
     border: none;
     border-bottom: 1px solid var(--primary-200);
   }
@@ -174,15 +166,17 @@ body.user-messages-page .topic-list-item {
   }
 
   // avatar & author
-  .topic-author-avatar-data {
+  .topic-author-avatar-data,
+  .author-avatar {
     grid-area: avatar;
     margin: 0;
   }
-  .topic-author-avatar img.avatar {
+  .topic-author-avatar img.avatar,
+  .author-avatar img.avatar {
     width: 44px;
     height: 44px;
     border-radius: var(--d-border-radius);
-    @media screen and (max-width: $small) {
+    @include breakpoint(mobile-extra-large) {
       width: 25px;
       height: 25px;
     }
@@ -211,7 +205,7 @@ body.user-messages-page .topic-list-item {
     color: var(--status-color);
     grid-area: status;
     width: min-content;
-    @media screen and (max-width: $small) {
+    @include breakpoint(mobile-extra-large) {
       height: calc(100% - 2px);
     }
     svg {
@@ -226,7 +220,7 @@ body.user-messages-page .topic-list-item {
     line-height: unset;
   }
   .topic-status-card.--hot {
-    --status-color: var(--hot-color);
+    --status-color: #e45735;
   }
 
   // title
@@ -242,6 +236,10 @@ body.user-messages-page .topic-list-item {
 
   td.main-link a.topic-status {
     display: none;
+  }
+
+  .topic-list-data {
+    padding: 0;
   }
 
   td.main-link .link-top-line a.raw-topic-link {
@@ -283,18 +281,16 @@ body.user-messages-page .topic-list-item {
 
   td.topic-category-status-data {
     display: contents;
-    @media screen and (max-width: $small) {
+    @include breakpoint(mobile-extra-large) {
       grid-area: category-status;
       display: flex;
       gap: 0.5em;
       align-items: center;
     }
   }
-  td.topic-category-status-data .badge-category__wrapper {
+  td.topic-category-status-data .badge-category__wrapper,
+  td.main-link .link-bottom-line .badge-category__wrapper {
     grid-area: category;
-  }
-
-  td.topic-category-status-data .badge-category__wrapper {
     overflow: unset;
     border-radius: var(--d-border-radius);
     padding: 6px;
@@ -304,7 +300,7 @@ body.user-messages-page .topic-list-item {
       oklch(from var(--category-badge-color) 45% calc(c * 0.5) h)
     );
 
-    @media screen and (max-width: $small) {
+    @include breakpoint(mobile-extra-large) {
       padding: 2px 6px;
     }
 
@@ -361,5 +357,102 @@ body.user-messages-page .topic-list-item {
   &.selected {
     box-shadow: 0px 0px 0px 2px var(--accent-color),
       0px 0px 12px 1px var(--topic-card-shadow);
+  }
+}
+
+.topic-list-item.bookmark-list-item {
+  @include breakpoint(mobile-extra-large) {
+    grid-template-columns: 25px auto repeat(5, 1fr) min-content;
+  }
+  grid-template-areas:
+    "avatar . . . . update dropdown"
+    ". topic-title topic-title topic-title topic-title category dropdown";
+  @include breakpoint(mobile-extra-large) {
+    grid-template-areas:
+      "avatar . . . . . update dropdown"
+      ". topic-title topic-title topic-title topic-title . category dropdown";
+  }
+  &.has-metadata {
+    grid-template-areas:
+      "avatar metadata metadata metadata metadata update dropdown"
+      ". topic-title topic-title topic-title likes-replies category dropdown";
+    @include breakpoint(mobile-extra-large) {
+      grid-template-areas:
+        "avatar metadata metadata metadata metadata . update dropdown"
+        ". topic-title topic-title topic-title likes-replies . category dropdown";
+    }
+  }
+  &.excerpt-expanded {
+    grid-template-areas:
+      "avatar topic-title topic-title topic-title topic-title topic-title update dropdown"
+      "avatar excerpt excerpt excerpt excerpt excerpt . dropdown"
+      ". excerpt excerpt excerpt excerpt excerpt . dropdown"
+      ". excerpt excerpt excerpt excerpt excerpt category dropdown";
+    @include breakpoint(mobile-extra-large) {
+      .post-excerpt {
+        display: none;
+      }
+    }
+    &.has-metadata {
+      grid-template-areas:
+        "avatar metadata metadata metadata metadata metadata update dropdown"
+        "avatar topic-title topic-title topic-title topic-title topic-title topic-title dropdown"
+        ". excerpt excerpt excerpt excerpt excerpt . dropdown"
+        ". excerpt excerpt excerpt excerpt excerpt category dropdown";
+    }
+  }
+  td.main-link .link-bottom-line {
+    display: contents;
+    .badge-category__wrapper {
+      grid-area: category;
+    }
+  }
+  td.main-link .link-top-line {
+    display: contents;
+    .bookmark-metadata {
+      grid-area: metadata;
+    }
+    .bookmark-status-with-link {
+      grid-area: topic-title;
+    }
+  }
+  .post-excerpt {
+    grid-area: excerpt;
+  }
+  .topic-list-data:last-of-type {
+    display: contents;
+    .bookmark-actions-dropdown {
+      grid-area: dropdown;
+      align-self: center;
+    }
+  }
+  .post-metadata.topic-list-data.updated-at {
+    grid-area: update;
+    margin-left: auto;
+  }
+  td.activity .post-activity {
+    display: none;
+  }
+}
+
+.topic-list-item.assigned-list-item {
+  grid-template-areas:
+    "avatar author status status . activity dropdown"
+    ". topic-title topic-title topic-title likes-replies category dropdown";
+  @include breakpoint(mobile-extra-large) {
+    grid-template-areas:
+      "avatar author status status . . . activity dropdown"
+      ". topic-title topic-title topic-title . . . . dropdown"
+      ". topic-title topic-title topic-title likes-replies likes-replies likes-replies category dropdown";
+  }
+  .assign-topic-buttons {
+    display: contents;
+    .assign-actions-dropdown {
+      grid-area: dropdown;
+      align-self: center;
+    }
+  }
+  td.topic-category-status-data {
+    display: contents;
   }
 }
