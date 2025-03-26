@@ -1,27 +1,25 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
-import TopicAuthorAvatarColumn from "../components/card/topic-author-avatar-column";
-import TopicAuthorColumn from "../components/card/topic-author-column";
+import TopicActivityColumn from "../components/card/topic-activity-column";
 import TopicCategoryColumn from "../components/card/topic-category-column";
 import TopicLikesColumn from "../components/card/topic-likes-column";
 import TopicRepliesColumn from "../components/card/topic-replies-column";
 import TopicStatusColumn from "../components/card/topic-status-column";
 
-const TopicAuthor = <template>
-  <td class="topic-author-data">
-    <TopicAuthorColumn @topic={{@topic}} />
+const TopicActivity = <template>
+  <td class="topic-activity-data">
+    <TopicActivityColumn @topic={{@topic}} />
   </td>
 </template>;
 
-const TopicAuthorAvatar = <template>
-  <td class="topic-author-avatar-data">
-    <TopicAuthorAvatarColumn @topic={{@topic}} />
-  </td>
-</template>;
-
-const TopicCategoryStatus = <template>
-  <td class="topic-category-status-data">
-    <TopicCategoryColumn @topic={{@topic}} />
+const TopicStatus = <template>
+  <td class="topic-status-data">
     <TopicStatusColumn @topic={{@topic}} />
+  </td>
+</template>;
+
+const TopicCategory = <template>
+  <td class="topic-category-data">
+    <TopicCategoryColumn @topic={{@topic}} />
   </td>
 </template>;
 
@@ -40,17 +38,17 @@ export default {
       api.registerValueTransformer(
         "topic-list-columns",
         ({ value: columns }) => {
-          columns.add("topic-author", {
-            item: TopicAuthor,
-            after: "activity",
+          columns.add("topic-activity", {
+            item: TopicActivity,
+            after: "title",
           });
-          columns.add("topic-category-status", {
-            item: TopicCategoryStatus,
+          columns.add("topic-status", {
+            item: TopicStatus,
             after: "topic-author",
           });
-          columns.add("topic-author-avatar", {
-            item: TopicAuthorAvatar,
-            after: "topic-category-status",
+          columns.add("topic-category", {
+            item: TopicCategory,
+            after: "topic-status",
           });
           columns.add("topic-likes-replies", {
             item: TopicLikesReplies,
@@ -59,6 +57,7 @@ export default {
           columns.delete("posters");
           columns.delete("views");
           columns.delete("replies");
+          columns.delete("activity");
           return columns;
         }
       );
