@@ -37,19 +37,31 @@
   grid-column-gap: 12px;
   grid-row-gap: 8px;
   border-radius: var(--d-border-radius);
+  td.main-link .link-top-line {
+    grid-row: 1/2;
+    grid-column: 1/-1;
+    font-weight: 500;
+  }
+  &.--has-status-card td.main-link .link-top-line {
+    grid-column: 1/-2;
+  }
   @include breakpoint(extra-large) {
-    grid-template-columns: 20px repeat(6, 1fr);
     grid-template-areas:
       ". . . . . . status"
       "activity activity activity activity activity likes-replies category";
   }
   @include breakpoint(mobile-extra-large) {
+    td.main-link .link-top-line,
+    &.--has-status-card td.main-link .link-top-line {
+      grid-row: 2/3;
+      grid-column: 1/-1;
+    }
     grid-template-columns: 25px repeat(7, 1fr);
     grid-template-rows: auto auto auto;
     grid-template-areas:
-      ". . . . . . . status"
-      "activity activity activity activity activity activity activity activity"
-      "category category category category category category category likes-replies";
+      "category category category category category category category status"
+      ". . . . . . . ."
+      "activity activity activity activity activity activity activity likes-replies";
     border: none;
     border-bottom: 1px solid var(--primary-200);
     box-shadow: none;
@@ -57,26 +69,24 @@
   }
   &.excerpt-expanded {
     grid-template-columns: 20px auto repeat(5, 1fr) auto;
-    grid-template-rows: auto auto auto 30px;
+    grid-template-rows: auto auto auto;
     grid-template-areas:
       ". . . . . . . status"
       "activity activity activity activity activity activity activity activity"
-      "excerpt excerpt excerpt excerpt excerpt excerpt . ."
       "excerpt excerpt excerpt excerpt excerpt excerpt likes-replies category";
     @include breakpoint(extra-large) {
       grid-template-areas:
         ". . . . . . . status"
         "activity activity activity activity activity activity activity activity"
-        "excerpt excerpt excerpt excerpt excerpt excerpt excerpt likes-replies"
-        "excerpt excerpt excerpt excerpt excerpt excerpt excerpt category";
+        "excerpt excerpt excerpt excerpt excerpt excerpt likes-replies category";
     }
     @include breakpoint(mobile-extra-large) {
       grid-template-columns: 25px auto repeat(6, 1fr);
       grid-template-rows: auto auto auto;
       grid-template-areas:
-        ". . . . . . . status"
-        "activity activity activity activity activity activity activity activity"
-        "category . . . . . . likes-replies";
+        "category category category category category category category status"
+        ". . . . . . . ."
+        "activity activity activity activity activity activity activity likes-replies";
       .topic-excerpt {
         display: none;
       }
@@ -104,6 +114,8 @@
     display: flex;
     gap: 0.25em;
     font-size: var(--font-down-1);
+    height: 100%;
+    align-items: center;
   }
 
   .topic-activity__user {
@@ -166,15 +178,6 @@
     --status-color: #e45735;
   }
 
-  // title
-  td.main-link .link-top-line {
-    font-size: var(--font-0);
-    grid-row: 1/2;
-    grid-column: 1/-2;
-    font-weight: 500;
-    display: flex;
-  }
-
   .link-top-line .event-date {
     margin-left: 0.5em;
     font-size: var(--font-down-3);
@@ -206,7 +209,8 @@
 
   // excerpt
   .topic-excerpt {
-    grid-area: excerpt;
+    grid-row: 3 / -1;
+    grid-column: 1 / -2;
     margin: 0;
     font-size: var(--font-down-2);
   }
@@ -248,6 +252,7 @@
 
     @include breakpoint(tablet) {
       padding: 2px 6px;
+      font-size: var(--font-down-2);
     }
 
     .badge-category__name {
@@ -436,28 +441,35 @@ body.user-messages-page .topic-list-item {
   td.topic-status-data {
     display: none;
   }
+  td.main-link .link-top-line {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+  }
+  grid-template-areas:
+    ". . . . . . ."
+    "activity activity activity activity activity likes-replies likes-replies";
   &.excerpt-expanded {
     grid-template-columns: 20px repeat(6, 1fr) auto;
     grid-template-rows: 20px auto auto 30px;
     grid-template-areas:
-      "activity activity activity activity activity activity activity activity"
       ". . . . . . . ."
+      "activity activity activity activity activity activity activity activity"
       "excerpt excerpt excerpt excerpt excerpt excerpt . ."
       "excerpt excerpt excerpt excerpt excerpt excerpt likes-replies likes-replies";
     @include breakpoint(extra-large) {
       grid-template-areas:
-        "avatar author status status . . . activity"
-        "avatar . . . . . . ."
-        ". excerpt excerpt excerpt excerpt excerpt . likes-replies"
-        ". excerpt excerpt excerpt excerpt excerpt . likes-replies";
+        ". . . . . . . ."
+        "activity activity activity activity activity activity activity activity"
+        "excerpt excerpt excerpt excerpt excerpt excerpt . likes-replies"
+        "excerpt excerpt excerpt excerpt excerpt excerpt . likes-replies";
     }
   }
   @include breakpoint(mobile-extra-large) {
     grid-template-columns: 25px auto repeat(6, 1fr);
     grid-template-rows: auto auto;
     grid-template-areas:
-      "activity activity activity activity activity activity activity activity"
-      ". . . . . . . .";
+      ". . . . . . . ."
+      "activity activity activity activity activity activity activity activity";
     .topic-excerpt {
       display: none;
     }
