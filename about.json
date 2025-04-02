@@ -40,8 +40,8 @@
     "Royal": {
       "primary": "1A1A1A",
       "secondary": "ffffff",
-      "tertiary": "4169e1",
-      "tertiary-med-or-tertiary": "4169e1",
+      "tertiary": "288EDC",
+      "tertiary-med-or-tertiary": "288EDC",
       "selected": "c7e3ff",
       "header_background": "ffffff",
       "header_primary": "1A1A1A",
@@ -50,8 +50,8 @@
     "Royal Dark": {
       "primary": "ffffff",
       "secondary": "1A1A1A",
-      "tertiary": "4169e1",
-      "tertiary-med-or-tertiary": "4169e1",
+      "tertiary": "288EDC",
+      "tertiary-med-or-tertiary": "288EDC",
       "selected": "3a455f",
       "header_background": "1A1A1A",
       "header_primary": "ffffff",
