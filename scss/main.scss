@@ -122,3 +122,32 @@ aside.onebox {
     max-height: calc(100vh - 50px - 1em - var(--main-grid-gap));
   }
 }
+
+// Nauta edits //
+.signup-progress-bar,
+#user-menu-button-other-notifications,
+.quick-access-profile .activity,
+.quick-access-profile .presence-toggle,
+.user-nav__activity,
+.user-nav__notifications,
+.user-nav__badges,
+.collapsed-info-panel:last-child,
+.sidebar-section-wrapper .sidebar-section-header-global-indicator .d-icon,
+.groups-header-filters {
+  display: none;
+}
+.list-controls {
+  padding: 0;
+}
+
+.badge-grouping:nth-child(1).badge-group-list:before {
+  content: "@anons se transforman en @randoms con 4 desafíos:"
+}
+
+.badge-grouping:nth-child(2).badge-group-list:before {
+  content: "@randoms son @traders con estos 9:"
+}
+
+.badge-grouping:nth-child(4) {
+  display: none;
+}
