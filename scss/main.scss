@@ -134,13 +134,17 @@ aside.onebox {
 .collapsed-info-panel:last-child,
 .sidebar-section-wrapper .sidebar-section-header-global-indicator .d-icon,
 .groups-header-filters {
-  display: none;
+  display: none !important;
 }
 
 .tag-group-glosario,
 .tag-group-content_languages_disabled,
 .tag-group-content_languages {
-display: none;
+display: none !important;
+}
+
+.user-card .badge-section {
+  display: none !important;
 }
 .list-controls {
   padding: 0;
