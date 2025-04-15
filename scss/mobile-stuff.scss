@@ -213,3 +213,30 @@
 .d-editor-preview-wrapper {
   outline: 2px solid var(--background-color);
 }
+
+:root {
+  --base-font-size-smallest: 0.8965em;
+  --base-font-size-smaller: 0.9625em;
+  --base-font-size: 1.1em;
+  --base-font-size-larger: 1.2375em;
+  --base-font-size-largest: 1.375em;
+  --font-up-6: 2.5256em;
+  --font-up-5: 2.2em;
+  --font-up-4: 1.92621em;
+  --font-up-3: 1.66727em;
+  --font-up-2: 1.45145em;
+  --font-up-1: 1.26357em;
+  --font-0: 1.1em;
+  --font-down-1: 0.95766em;
+  --font-down-2: 0.83369em;
+  --font-down-3: 0.72589em;
+  --font-down-4: 0.63195em;
+  --font-down-5: 0.55em;
+  --font-down-6: 0.47905em;
+  --font-up-3-rem: 1.66727rem;
+  --font-up-2-rem: 1.45145rem;
+  --font-up-1-rem: 1.26357rem;
+  --font-0-rem: 1.1rem;
+  --font-down-1-rem: 0.95766rem;
+  --font-down-2-rem: 0.83369rem;
+}
