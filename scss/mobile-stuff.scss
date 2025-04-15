@@ -214,6 +214,18 @@
   outline: 2px solid var(--background-color);
 }
 
+.topic-list-body .topic-list-item td.main-link .link-top-line a.raw-topic-link {
+font-weight: 600;
+}
+
+@media screen and (min-width: calc(1001px)) {
+  .topic-list-body .topic-list-item .topic-status-card {
+top: -25px;
+height: 25px;
+font-size: var(--font-down-2);
+padding: 0.21em;
+  }
+
 :root {
   --base-font-size-smallest: 0.8965em;
   --base-font-size-smaller: 0.9625em;
