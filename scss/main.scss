@@ -1,5 +1,5 @@
 :root {
-  --main-grid-gap: 2em;
+  --main-grid-gap: 0.5em;
 }
 
 html:not(:has(.has-full-page-chat)) {
@@ -58,13 +58,18 @@ body:not(.has-full-page-chat) {
     @include breakpoint(medium) {
       --main-grid-gap: 0;
     }
-    @include breakpoint(tablet, $rule: min-width) {
+    @media screen and (min-width: 768px) {
       gap: var(--main-grid-gap);
     }
     #main-outlet {
       width: 100%;
       max-width: unset;
       padding-bottom: var(--spacing-block-l);
+      border-radius: var(--d-border-radius-large);
+      background-color: var(--d-content-background);
+      @include breakpoint(medium) {
+        border-radius: 0px;
+      }
       html.composer-open & {
         padding-bottom: var(--composer-height);
       }
@@ -76,11 +81,6 @@ body:not(.has-full-page-chat) {
           padding-inline: var(--spacing-inline-l);
         }
       }
-      border-radius: var(--d-border-radius-large);
-      @include breakpoint(medium) {
-        border-radius: 0px;
-      }
-      background-color: var(--d-content-background);
     }
   }
 }
