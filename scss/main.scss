@@ -152,6 +152,24 @@ display: none !important;
   padding: 0;
 }
 
+.img.emoji {
+  width: 23px;
+  height: 23px;
+  padding-bottom: 3px;
+  padding-left: 3px;
+}
+
+.collapsed-info-panel dl div:last-child,
+.collapsed-info-panel dd.trust-level,
+.collapsed-info-panel dl.trust-level,
+.user-content .badges-section {
+display: none !important;
+}
+
+.collapsed-info-panel dd.groups a.ember-view {
+display: none !important;
+}
+
 .badge-grouping:nth-child(1).badge-group-list:before {
   content: "@anons se transforman en @randoms con 4 desafíos:"
 }
