@@ -2,7 +2,7 @@
   position: sticky;
   top: var(--header-offset);
   background: var(--d-content-background);
-  z-index: z("base") + 3;
+  z-index: z("base");
   padding: 1.5rem 0 1rem 0;
   max-width: unset;
 
@@ -17,7 +17,6 @@
     background-color: var(--secondary);
     border-radius: var(--d-border-radius-large);
     border: 1px solid var(--primary-300);
-    // font-size: var(--font-up-1-rem);
     &:hover {
       border: 1px solid var(--accent-color);
     }
