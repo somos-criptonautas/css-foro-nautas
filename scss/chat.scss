@@ -1,36 +1,50 @@
+/* Full page chat */
 .full-page-chat.full-page-chat-sidebar-enabled {
   border: none;
-}
-
-.c-navbar-container {
-  padding: 0 1.5em;
-  background-color: var(--d-content-background);
 }
 
 body.has-full-page-chat {
   background-color: var(--background-color);
 }
 
-.chat-drawer-container {
-  .is-expanded & {
-    box-shadow: 0px 0px 0px 2px var(--tertiary-medium);
-  }
-  .chat-drawer.is-expanded & {
-    border: none;
-  }
+/* Navigation */
+.c-navbar-container {
+  padding: 0 0.5em;
+  background-color: var(--d-content-background);
+}
+
+.c-navbar__actions .btn {
+  font-size: var(--font-down-1);
+}
+
+.c-navbar__title-text {
+  padding-left: 0.5rem;
+}
+
+/* Chat drawer */
+.chat-drawer-container.is-expanded,
+.is-expanded .chat-drawer-container {
+  box-shadow: 0 0 0 2px var(--secondary-very-high);
+}
+
+.chat-drawer.is-expanded .chat-drawer-container {
+  border: none;
 }
 
 .chat-drawer-outlet-container {
   z-index: z("composer", "content");
 }
 
+/* Channel list */
 .chat-drawer .channels-list-container .chat-channel-row {
   margin-bottom: var(--spacing-block-xs);
   font-size: var(--font-up-1);
   border-bottom: none;
-  &:hover {
-    background-color: var(--d-sidebar-active-background);
-  }
+  height: 2rem;
+}
+
+.chat-drawer .channels-list-container .chat-channel-row:hover {
+  background-color: var(--d-sidebar-active-background);
 }
 
 .channel-title {
@@ -39,18 +53,22 @@ body.has-full-page-chat {
   font-size: var(--font-down-1);
 }
 
+/* Chat composer */
 .chat-composer__wrapper {
   background: var(--d-content-background);
 }
 
-.chat-message-actions .more-buttons .btn-icon-text {
-  &:hover {
-    background-color: var(--d-selected);
-    box-shadow: none;
-    color: var(--primary);
-  }
+.chat-composer__outer-container {
+  padding-inline: 0.33rem;
 }
 
 .chat-drawer-active.chat-drawer-expanded .chat-composer-dropdown__menu-content {
   z-index: z("composer", "content") + 1;
+}
+
+/* Message actions */
+.chat-message-actions .more-buttons .btn-icon-text:hover {
+  background-color: var(--d-selected);
+  box-shadow: none;
+  color: var(--primary);
 }

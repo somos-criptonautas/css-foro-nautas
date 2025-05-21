@@ -189,3 +189,18 @@ display: none !important;
 .has-ai-conversations-sidebar .ai-new-question-button {
   margin: 1.8em 1rem 1rem;
 }
+
+.category-box .category-box-soporte,
+.category-box .category-box-wiki {
+  display: none;
+}
+
+.signup-fullpage .signup-body {
+max-width: 850px;
+}
+
+[data-section-name="tags"],
+[data-section-name="user-threads"],
+[data-section-name="messages"] {
+    display: none;
+}
