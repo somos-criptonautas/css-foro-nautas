@@ -53,6 +53,10 @@ body.has-full-page-chat {
   font-size: var(--font-down-1);
 }
 
+.chat-drawer .channels-list-container .chat-channel-row {
+  font-size: var(--font-0);
+}
+
 /* Chat composer */
 .chat-composer__wrapper {
   background: var(--d-content-background);
