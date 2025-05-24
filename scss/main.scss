@@ -208,3 +208,10 @@ max-width: 850px;
 [data-section-name="chat-dms"] {
     display: none !important;
 }
+
+// ** Dirty hack to hide titles and flair user changing ** //
+
+.control-group .pref-title,
+.control-group .pref-flair {
+  display: none !important;
+}
