@@ -145,7 +145,7 @@ aside.onebox {
 .tag-group-content_languages,
 .tag-group-tickets_priority,
 .tag-group-tickets_status {
-display: none !important;
+  display: none !important;
 }
 
 .user-card .badge-section {
@@ -166,19 +166,19 @@ display: none !important;
 .collapsed-info-panel dd.trust-level,
 .collapsed-info-panel dl.trust-level,
 .user-content .badges-section {
-display: none !important;
+  display: none !important;
 }
 
 .collapsed-info-panel dd.groups a.ember-view {
-display: none !important;
+  display: none !important;
 }
 
 .badge-grouping:nth-child(1).badge-group-list:before {
-  content: "@anons se transforman en @randoms con 4 desafíos:"
+  content: "@anons se transforman en @randoms con 4 desafíos:";
 }
 
 .badge-grouping:nth-child(2).badge-group-list:before {
-  content: "@randoms son @traders con estos 9:"
+  content: "@randoms son @traders con estos 9:";
 }
 
 .badge-grouping:nth-child(4) {
@@ -199,14 +199,14 @@ display: none !important;
 }
 
 .signup-fullpage .signup-body {
-max-width: 850px;
+  max-width: 850px;
 }
 
 [data-section-name="tags"],
 [data-section-name="user-threads"],
 [data-section-name="messages"],
 [data-section-name="chat-dms"] {
-    display: none !important;
+  display: none !important;
 }
 
 // ** Dirty hack to hide titles and flair user changing ** //

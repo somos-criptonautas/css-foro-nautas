@@ -1,3 +1,5 @@
+@use "lib/viewport";
+
 /* Full page chat */
 .full-page-chat.full-page-chat-sidebar-enabled {
   border: none;
@@ -22,39 +24,52 @@ body.has-full-page-chat {
 }
 
 /* Chat drawer */
-.chat-drawer-container.is-expanded,
-.is-expanded .chat-drawer-container {
-  box-shadow: 0 0 0 2px var(--secondary-very-high);
-}
+.chat-drawer-container {
+  .is-expanded & {
+    box-shadow: 0 0 0 2px var(--tertiary-medium);
+  }
 
-.chat-drawer.is-expanded .chat-drawer-container {
-  border: none;
+  .chat-drawer.is-expanded & {
+    border: none;
+  }
 }
 
 .chat-drawer-outlet-container {
   z-index: z("composer", "content");
+
+  .peek-mode-active & {
+    padding-bottom: 0;
+    left: unset;
+    right: var(--main-grid-gap);
+
+    &:has(.is-expanded) {
+      z-index: calc(z("composer", "dropdown") + 1);
+    }
+  }
+}
+
+.chat-drawer {
+  .peek-mode-active & {
+    max-width: 90vw;
+  }
 }
 
 /* Channel list */
 .chat-drawer .channels-list-container .chat-channel-row {
   margin-bottom: var(--spacing-block-xs);
-  font-size: var(--font-up-1);
+  font-size: var(--font-0);
   border-bottom: none;
   height: 2rem;
-}
 
-.chat-drawer .channels-list-container .chat-channel-row:hover {
-  background-color: var(--d-sidebar-active-background);
+  &:hover {
+    background-color: var(--d-sidebar-active-background);
+  }
 }
 
 .channel-title {
   font-weight: bold;
   text-transform: uppercase;
   font-size: var(--font-down-1);
-}
-
-.chat-drawer .channels-list-container .chat-channel-row {
-  font-size: var(--font-0);
 }
 
 /* Chat composer */
@@ -67,16 +82,15 @@ body.has-full-page-chat {
 }
 
 .chat-drawer-active.chat-drawer-expanded .chat-composer-dropdown__menu-content {
-  z-index: z("composer", "content") + 1;
+  z-index: z("composer", "modal", "dialog");
 }
 
-/* Message actions */
-.chat-message-actions .more-buttons .btn-icon-text:hover {
-  background-color: var(--d-selected);
-  box-shadow: none;
-  color: var(--primary);
+.chat-replying-indicator-container {
+  @include viewport.from(sm) {
+    margin-left: calc(0.65em + 0.2rem);
+  }
 }
 
 .chat-browse-view__filter-link {
   font-size: var(--font-down-1);
-  }
+}
