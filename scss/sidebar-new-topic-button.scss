@@ -5,6 +5,12 @@
   }
 }
 
+.has-ai-conversations-sidebar {
+  .sidebar-new-topic-button__wrapper {
+    display: none;
+  }
+}
+
 .sidebar-new-topic-button {
   flex: 1 1 auto;
 
@@ -45,6 +51,7 @@
         border-radius: 0 var(--d-button-border-radius)
           var(--d-button-border-radius) 0;
         padding-right: 0.65em;
+
         .d-icon {
           color: var(--secondary);
         }

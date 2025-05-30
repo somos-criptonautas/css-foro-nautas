@@ -52,6 +52,22 @@ body.has-full-page-chat {
   .peek-mode-active & {
     max-width: 90vw;
   }
+
+  .peek-mode-active & {
+    padding-bottom: 0;
+    left: unset;
+    right: var(--main-grid-gap);
+
+    &:has(.is-expanded) {
+      z-index: calc(z("composer", "dropdown") + 1);
+    }
+  }
+}
+
+.chat-drawer {
+  .peek-mode-active & {
+    max-width: 90vw;
+  }
 }
 
 /* Channel list */
@@ -83,8 +99,13 @@ body.has-full-page-chat {
 
 .chat-drawer-active.chat-drawer-expanded .chat-composer-dropdown__menu-content {
   z-index: z("composer", "modal", "dialog");
+  z-index: z("composer", "modal", "dialog");
 }
 
+.chat-replying-indicator-container {
+  @include viewport.from(sm) {
+    margin-left: calc(0.65em + 0.2rem);
+  }
 .chat-replying-indicator-container {
   @include viewport.from(sm) {
     margin-left: calc(0.65em + 0.2rem);
