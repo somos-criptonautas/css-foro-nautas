@@ -159,14 +159,12 @@ aside.onebox {
 .tag-group-tickets_status {
   display: none !important;
 }
-
 .user-card .badge-section {
   display: none !important;
 }
 .list-controls {
   padding: 0;
 }
-
 .img.emoji {
   width: 23px;
   height: 23px;
@@ -185,11 +183,11 @@ aside.onebox {
   display: none !important;
 }
 
-.badge-grouping:nth-child(1).badge-group-list:before {
+.badge-grouping:nth-child(1).badge-group-list::before {
   content: "@anons se transforman en @randoms con 4 desafíos:";
 }
 
-.badge-grouping:nth-child(2).badge-group-list:before {
+.badge-grouping:nth-child(2).badge-group-list::before {
   content: "@randoms son @traders con estos 9:";
 }
 
@@ -222,7 +220,6 @@ aside.onebox {
 }
 
 // ** Dirty hack to hide titles and flair user changing ** //
-
 .control-group .pref-title,
 .control-group .pref-flair {
   display: none !important;
