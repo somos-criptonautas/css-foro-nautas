@@ -226,3 +226,7 @@ aside.onebox {
 .control-group .pref-flair {
   display: none !important;
 }
+
+.div[class^="category-title-header"] {
+  color: unset !important
+}
