@@ -277,3 +277,9 @@
   --font-down-1-rem: 0.91413rem;
   --font-down-2-rem: 0.795795rem;
 }
+
+body.f-nav-hidden {
+  .list-controls {
+    top: 0;
+  }
+}
