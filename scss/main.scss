@@ -229,3 +229,10 @@ aside.onebox {
 .div[class^="category-title-header"] {
   color: unset !important;
 }
+
+.sidebar-section-link [data-link-name="preguntas"] a,
+.sidebar-section-link [data-link-name="preguntas"] .icon svg,
+.sidebar-section-link [data-link-name="curso"] a,
+.sidebar-section-link [data-link-name="curso"] .icon svg {
+  color: #be99f8;
+}
