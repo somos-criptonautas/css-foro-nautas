@@ -231,9 +231,32 @@ aside.onebox {
   color: unset !important;
 }
 
+// ** Apply styles to some categories ** //
+
 .sidebar-section-link [data-link-name="preguntas"] a,
 .sidebar-section-link [data-link-name="preguntas"] .icon svg,
 .sidebar-section-link [data-link-name="curso"] a,
 .sidebar-section-link [data-link-name="curso"] .icon svg {
   color: #be99f8;
+}
+
+// ** Invert search-box on search page ** //
+
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+}
+.page-not-found {
+  order: 1;
+}
+.page-not-found-search {
+  order: 2;
+  margin: 20px 0;
+}
+.page-not-found-topics {
+  order: 3;
+}
+
+.install-theme-item input:checked + label {
+  border-radius: 0.23rem;
 }
