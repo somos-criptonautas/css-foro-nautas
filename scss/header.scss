@@ -86,3 +86,9 @@ body.activate-account-page {
 .d-header-icons .badge-notification {
   border-color: var(--background-color);
 }
+
+@media screen and (max-width: 1024px) {
+  .header-dropdown-toggle .current-user .user-menu-panel {
+    display: none;
+  }
+}
