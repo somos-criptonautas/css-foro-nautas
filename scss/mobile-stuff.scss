@@ -283,18 +283,10 @@ body.f-nav-hidden {
   }
 }
 
-.toggle-current-user {
-  display: none;
-}
-
-.d-header-icons {
-  .header-dropdown-toggle {
-    &.chat-header-icon {
-      display: none !important;
-    }
-  }
-}
-
 body.f-nav-hidden:not(.has-full-page-chat) .f-nav {
   transform: none;
+}
+
+.header-dropdown-toggle .current-user .user-menu-panel {
+  display: none;
 }
