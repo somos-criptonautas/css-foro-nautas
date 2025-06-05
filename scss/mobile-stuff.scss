@@ -287,3 +287,11 @@ body.f-nav-hidden {
 .toggle-current-user {
   display: none;
 }
+
+.d-header-icons {
+  .header-dropdown-toggle {
+    &.chat-header-icon {
+      display: none;
+    }
+  }
+}
