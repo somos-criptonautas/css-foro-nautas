@@ -1,288 +1,200 @@
-// temp separate file to avoid merge hell… to be distributed later
-@include breakpoint(medium) {
-  html,
+@import "variables";
+@import "mixins";
+
+// Mobile stuff
+@include breakpoint(mobile-extra-large) {
+  .has-full-width-logo {
+    .d-header {
+      .header-before {
+        display: none;
+      }
+    }
+  }
+
   .d-header {
-    background-color: var(--d-content-background);
-  }
-}
-
-#main-outlet-wrapper {
-  *[class*="navigation-"] & {
-    @include breakpoint(mobile-extra-large) {
-      padding: 0;
-    }
-  }
-}
-
-#main-outlet {
-  @include breakpoint(mobile-extra-large) {
-    padding-top: var(--spacing-block-sm);
-  }
-
-  .list-controls {
-    @include breakpoint(mobile-extra-large) {
-      padding-inline: var(
-        --spacing-inline-m
-      ) !important; // override will be fixed when the whole chat page shenanigans is resolved
-      padding-block: var(--spacing-block-s);
-      border-bottom: 1px solid var(--primary-200);
-    }
-
-    .navigation-container {
-      @include breakpoint(mobile-extra-large) {
-        gap: var(--spacing-inline-s);
-
-        // don't know why we even hide this crucial navigation on mobile
-        .category-breadcrumb.hidden,
-        .category-breadcrumb {
-          display: flex !important;
-          column-gap: var(--spacing-inline-s);
-          row-gap: var(--spacing-block-xs);
-          flex-basis: 100%;
-
-          li {
-            margin-right: 0;
-            margin-left: calc(
-              (var(--spacing-block-s) - 2px) * -1
-            ); // 2px is width of the outline
-          }
-
-          .select-kit-header {
-            background: var(--d-content-background);
-            border: 0;
-          }
-        }
-
-        .btn-default {
-          border: 0;
-          margin-right: 0;
-
-          .d-icon {
-            font-size: var(--font-up-1);
-          }
-        }
-
-        .fk-d-button-tooltip {
-          margin-right: 0;
-          margin-left: var(
-            --spacing-inline-xs
-          ); // pure visual correction for horizontal alignment
-
-          &:has(#create-topic) {
-            order: 1;
-          }
-        }
-      }
-
-      #navigation-bar,
-      .navigation-controls,
-      .category-breadcrumb {
-        @include breakpoint(mobile-extra-large) {
-          margin-bottom: 0;
-        }
-      }
-
-      .navigation-controls {
-        @include breakpoint(mobile-extra-large) {
-          gap: var(--spacing-inline-s);
-        }
-      }
-    }
-  }
-
-  .list-container {
-    @include breakpoint(mobile-extra-large) {
-      padding-inline: 0 !important;
-    }
-
-    .topic-list-body {
-      @include breakpoint(mobile-extra-large) {
-        border-top: 0;
-        padding-top: 0;
-      }
-    }
-  }
-
-  #topic-title {
-    @include breakpoint(mobile-extra-large) {
-      padding-inline: var(--spacing-inline-s) !important;
-
-      .title-wrapper {
-        gap: var(--spacing-block-s);
-      }
-
-      .topic-category {
-        order: -1;
-      }
-
-      // make mixin of this
-      .badge-category__wrapper {
-        font-size: var(--font-down-2-rem);
-        border-radius: var(--d-border-radius);
-        padding: var(--spacing-inline-xs) var(--spacing-inline-s);
-        background-color: light-dark(
-          oklch(from var(--category-badge-color) 97% calc(c * 0.3) h),
-          oklch(from var(--category-badge-color) 45% calc(c * 0.5) h)
-        );
-        border: 1px solid
-          light-dark(
-            oklch(from var(--category-badge-color) 97% calc(c * 0.3) h),
-            oklch(from var(--category-badge-color) 45% calc(c * 0.5) h)
-          );
-      }
-
-      .badge-category__name {
-        color: light-dark(
-          oklch(from var(--category-badge-color) 20% calc(c * 1) h),
-          oklch(from var(--category-badge-color) 100% calc(c * 0.9) h)
-        );
-      }
-
-      .discourse-tags {
-        gap: var(--spacing-inline-xs);
-
-        &__tag-separator {
-          display: none;
-        }
-      }
-
-      .discourse-tag {
-        font-size: var(--font-down-2-rem);
-        padding: var(--spacing-inline-xs) var(--spacing-inline-s);
-        gap: var(--spacing-inline-xs);
-        border-radius: var(--d-border-radius-large);
-        border: 1px solid var(--primary-low-mid);
-        background: var(--secondary);
-      }
-    }
-  }
-
-  .container.posts {
-    @include breakpoint(mobile-extra-large) {
-      padding-inline: var(--spacing-inline-xs) !important;
-
-      .main-avatar .avatar {
-        width: 40px;
-        height: 40px;
-      }
-
-      .topic-body {
-        .topic-meta-data {
-          .username {
-            font-size: var(--font-0-rem);
-          }
-        }
-
-        .contents {
-          padding-top: var(--spacing-block-m);
-        }
-      }
-
-      .small-action {
-        &-desc {
-          padding: var(--spacing-block-xs) 0;
-        }
-
-        // for core eventually, better way imo
-        .topic-avatar {
-          padding-top: 0;
-          align-items: center;
-
-          .d-icon {
-            font-size: var(--font-up-1);
-          }
-        }
-      }
-    }
-  }
-
-  #topic-footer-buttons {
-    @include breakpoint(mobile-extra-large) {
-      padding-inline: var(--spacing-inline-xs) !important;
-    }
-  }
-}
-
-// should be changed in core, should not be a primary btn
-// changing this into straight buttons to match the progress one, which doesn't work well with rounded corners
-#topic-progress-wrapper {
-  .progress-back-container {
-    margin-right: 0;
-    margin-bottom: var(--spacing-block-xs);
-
-    .btn-primary.progress-back {
-      border-radius: 0;
-      background: var(--secondary);
-      border: 1px solid var(--tertiary-low);
-      color: var(--accent-color);
-      padding: var(--spacing-inline-s) var(--spacing-inline-m);
-
-      .d-icon {
-        color: var(--accent-color);
-      }
-    }
-  }
-
-  .topic-admin-menu-trigger {
-    border-radius: 0;
-    background: var(--secondary);
-    border: 1px solid var(--tertiary-low);
-  }
-}
-
-.mobile-device #reply-control.show-preview .submit-panel {
-  background-color: var(--background-color);
-}
-
-.d-editor-preview-wrapper {
-  outline: 2px solid var(--background-color);
-}
-.topic-list-body .topic-list-item td.main-link .link-top-line a.raw-topic-link {
-  font-weight: 600;
-}
-
-@media screen and (min-width: calc(1001px)) {
-  .topic-list-body .topic-list-item .topic-status-card {
-    top: -25px;
-    height: 25px;
-    font-size: var(--font-down-2);
-    padding: 0.21em;
-  }
-}
-
-:root {
-  --base-font-size-smallest: 0.85575em;
-  --base-font-size-smaller: 0.91875em;
-  --base-font-size: 1.05em;
-  --base-font-size-larger: 1.18125em;
-  --base-font-size-largest: 1.3125em;
-  --font-up-6: 2.4108em;
-  --font-up-5: 2.1em;
-  --font-up-4: 1.838655em;
-  --font-up-3: 1.591485em;
-  --font-up-2: 1.385475em;
-  --font-up-1: 1.206135em;
-  --font-0: 1.05em;
-  --font-down-1: 0.91413em;
-  --font-down-2: 0.795795em;
-  --font-down-3: 0.692895em;
-  --font-down-4: 0.603225em;
-  --font-down-5: 0.525em;
-  --font-down-6: 0.457275em;
-  --font-up-3-rem: 1.591485rem;
-  --font-up-2-rem: 1.385475rem;
-  --font-up-1-rem: 1.206135rem;
-  --font-0-rem: 1.05rem;
-  --font-down-1-rem: 0.91413rem;
-  --font-down-2-rem: 0.795795rem;
-}
-
-body.f-nav-hidden {
-  .list-controls {
+    position: fixed;
     top: 0;
-  }
-}
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--d-content-background);
 
-body.f-nav-hidden:not(.has-full-page-chat) .f-nav {
-  transform: none !important;
+    .panel {
+      padding: 0.5rem 1rem;
+    }
+
+    .header-before {
+      padding: 0.5rem 1rem;
+    }
+
+    .header-before-outlet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-before-outlet .user-menu {
+      position: static;
+    }
+  }
+
+  #main-outlet {
+    padding-top: 60px;
+  }
+
+  .docked-composer {
+    bottom: 60px;
+  }
+
+  .topic-body {
+    padding: 1rem;
+  }
+
+  .topic-list {
+    margin-top: 0;
+  }
+
+  .list-controls {
+    margin-top: 60px;
+  }
+
+  .topic-list-item {
+    padding: 1rem;
+  }
+
+  .topic-list .topic-list-item-separator {
+    margin: 0.5rem 0;
+  }
+
+  .topic-list .topic-list-item-separator td {
+    padding: 0.5rem 1rem;
+  }
+
+  .topic-list .topic-list-item-separator .topic-list-separator {
+    padding: 0.5rem 1rem;
+  }
+
+  .topic-list .topic-list-item-separator .topic-list-separator .separator {
+    margin: 0;
+  }
+
+  .topic-list
+    .topic-list-item-separator
+    .topic-list-separator
+    .separator:before {
+    content: none;
+  }
+
+  .topic-list
+    .topic-list-item-separator
+    .topic-list-separator
+    .separator
+    .d-icon {
+    display: none;
+  }
+
+  .topic-list .topic-list-item-separator .topic-list-separator .separator span {
+    padding: 0;
+  }
+
+  .topic-list
+    .topic-list-item-separator
+    .topic-list-separator
+    .separator
+    span:before {
+    content: "•";
+    margin-right: 0.5rem;
+  }
+
+  .topic-list
+    .topic-list-item-separator
+    .topic-list-separator
+    .separator
+    span:after {
+    content: "•";
+    margin-left: 0.5rem;
+  }
+
+  .topic-list
+    .topic-list-item-separator
+    .topic-list-separator
+    .separator
+    span:before,
+  .topic-list
+    .topic-list-item-separator
+    .topic-list-separator
+    .separator
+    span:after {
+    color: var(--primary-medium);
+  }
+
+  .topic-list .topic-list-item-separator .topic-list-separator .separator span {
+    color: var(--primary);
+  }
+
+  .topic-list .topic-list-item-separator .topic-list-separator .separator {
+    background: none;
+  }
+
+  .topic-list .topic-list-item-separator .topic-list-separator {
+    border: none;
+  }
+
+  .topic-list .topic-list-item-separator td {
+    border: none;
+  }
+
+  .topic-list .topic-list-item-separator {
+    border: none;
+  }
+
+  .topic-list .topic-list-item-separator td {
+    padding: 0;
+  }
+
+  .topic-list .topic-list-item-separator .topic-list-separator {
+    padding: 0;
+  }
+
+  .topic-list .topic-list-item-separator .topic-list-separator .separator {
+    padding: 0;
+  }
+
+  .topic-list .topic-list-item-separator .topic-list-separator .separator span {
+    padding: 0;
+  }
+
+  .topic-list
+    .topic-list-item-separator
+    .topic-list-separator
+    .separator:before,
+  .topic-list
+    .topic-list-item-separator
+    .topic-list-separator
+    .separator:after {
+    display: none;
+  }
+
+  .topic-list .topic-list-item-separator {
+    height: 1px;
+    background-color: var(--primary-low);
+  }
+
+  .topic-list .topic-list-item-separator td {
+    height: 1px;
+    line-height: 1px;
+  }
+
+  .topic-list .topic-list-item-separator .topic-list-separator {
+    height: 1px;
+  }
+
+  .topic-list .topic-list-item-separator .topic-list-separator .separator {
+    height: 1px;
+  }
+
+  .topic-list .topic-list-item-separator .topic-list-separator .separator span {
+    display: none;
+  }
 }
