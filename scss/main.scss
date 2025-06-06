@@ -244,13 +244,16 @@ aside.onebox {
   display: flex;
   flex-direction: column;
 }
+
 .page-not-found {
   order: 1;
 }
+
 .page-not-found-search {
   order: 2;
   margin: 20px 0;
 }
+
 .page-not-found-topics {
   order: 3;
 }
