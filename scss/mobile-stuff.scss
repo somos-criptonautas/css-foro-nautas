@@ -23,6 +23,7 @@
 
   .list-controls {
     position: inherit !important;
+
     @include viewport.until(sm) {
       padding-inline: var(
         --spacing-inline-m
