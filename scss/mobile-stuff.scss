@@ -93,6 +93,7 @@
   }
 
   .list-container {
+    position: inherit;
     @include viewport.until(sm) {
       padding-inline: 0 !important;
     }
