@@ -245,11 +245,11 @@
 @include viewport.until(sm) {
   // Hide user menu panel on mobile
   .header-dropdown-toggle .current-user .user-menu-panel {
-    display: none;
+    display: none !important;
   }
 }
 
 // Disable auto-hide navbar on mobile
 body.f-nav-hidden:not(.has-full-page-chat) .f-nav {
-  transform: none;
+  transform: none !important;
 }
