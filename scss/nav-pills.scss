@@ -6,6 +6,11 @@
   padding: 1.5rem 0 1rem 0;
   max-width: unset;
 
+  @include viewport.until(sm) {
+    position: static;
+    top: unset;
+  }
+
   .navigation-container {
     gap: 1rem;
 

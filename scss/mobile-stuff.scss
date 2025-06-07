@@ -22,8 +22,6 @@
   }
 
   .list-controls {
-    position: inherit !important;
-
     @include viewport.until(sm) {
       padding-inline: var(
         --spacing-inline-m
@@ -242,13 +240,6 @@
 
 .d-editor-preview-wrapper {
   outline: 2px solid var(--background-color);
-}
-
-@include viewport.until(sm) {
-  // Hide user menu panel on mobile
-  .header-dropdown-toggle .current-user .user-menu-panel {
-    display: none !important;
-  }
 }
 
 // Disable auto-hide navbar on mobile

@@ -273,3 +273,7 @@ aside.onebox {
 .install-theme-item input:checked + label {
   border-radius: 0.23rem;
 }
+
+.category-breadcrumb li:first-child {
+  display: none !important;
+}
