@@ -1,4 +1,16 @@
+// Base font size (matches Discourse default)
+html {
+  font-size: 16px;
+}
+
 @use "lib/viewport";
+
+// Increase font size by 10% on desktop
+@include viewport.from(xl) {
+  html {
+    font-size: 110%;
+  }
+}
 
 :root {
   --main-grid-gap: 0.5em;
