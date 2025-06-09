@@ -246,3 +246,8 @@
 body.f-nav-hidden:not(.has-full-page-chat) .f-nav {
   transform: none !important;
 }
+
+// Hide user menu panel on mobile
+.header-dropdown-toggle .current-user .user-menu-panel {
+  display: none !important;
+}
