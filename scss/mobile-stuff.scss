@@ -249,14 +249,17 @@ body.f-nav-hidden:not(.has-full-page-chat) .f-nav {
   transform: none !important;
 }
 
-// Hide user menu panel on mobile
-.header-dropdown-toggle .current-user .user-menu-panel {
-  display: none !important;
-}
-
-body.f-nav-hidden:not(.archetype-regular):not(.archetype-private_message):not(
+// Hide navigation (desktop on mobile) on scrolling
+body.f-nav-hidden:not(
+    .archetype-regular,
+    .archetype-private_message,
     .has-full-page-chat
   )
   .list-controls {
   animation: fadeOutZ 0.1s forwards linear;
+}
+
+// All categories sidebar same font-size
+.sidebar-wrapper .sidebar-section-link [data-link-name="all-categories"] {
+  font-size: var(--font-up-1);
 }

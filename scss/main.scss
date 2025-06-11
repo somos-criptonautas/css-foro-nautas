@@ -277,3 +277,7 @@ aside.onebox {
 .category-breadcrumb li:first-child {
   display: none !important;
 }
+
+.message-panel__inboxes .message-panel__inbox:nth-last-child {
+  display: none;
+}

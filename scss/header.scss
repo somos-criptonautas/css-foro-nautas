@@ -89,10 +89,7 @@ body.activate-account-page {
   border-color: var(--background-color);
 }
 
-// Hide user-menu on Mobile //
-@media screen and (width >=768px) {
-  // Hide user menu panel on mobile
-  .header-dropdown-toggle .current-user .user-menu-panel {
-    display: none !important;
-  }
+// Hide user menu panel on mobile
+.d-header-icons .header-dropdown-toggle button {
+  display: none !important;
 }
