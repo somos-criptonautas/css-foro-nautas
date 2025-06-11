@@ -90,6 +90,6 @@ body.activate-account-page {
 }
 
 // Hide user menu panel on mobile
-.d-header-icons .header-dropdown-toggle button {
+.d-header-icons .header-dropdown-toggle [data-identifier="avatar-profile"] {
   display: none !important;
 }
