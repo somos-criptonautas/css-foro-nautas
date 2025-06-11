@@ -251,3 +251,10 @@ body.f-nav-hidden:not(.has-full-page-chat) .f-nav {
 .header-dropdown-toggle .current-user .user-menu-panel {
   display: none !important;
 }
+
+body.f-nav-hidden:not(.archetype-regular):not(.archetype-private_message):not(
+    .has-full-page-chat
+  )
+  .list-controls {
+  animation: fadeOutZ 0.1s forwards linear;
+}

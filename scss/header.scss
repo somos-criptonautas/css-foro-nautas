@@ -90,7 +90,7 @@ body.activate-account-page {
 }
 
 // Hide user-menu on Mobile //
-@include viewport.until(sm) {
+@media screen and (width >=768px) {
   // Hide user menu panel on mobile
   .header-dropdown-toggle .current-user .user-menu-panel {
     display: none !important;
