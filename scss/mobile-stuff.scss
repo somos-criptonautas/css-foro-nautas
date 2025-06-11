@@ -256,7 +256,7 @@ body.f-nav-hidden:not(
     .has-full-page-chat
   )
   .list-controls {
-  animation: fadeOutZ 0.1s forwards linear;
+  position: static;
 }
 
 // All categories sidebar same font-size
