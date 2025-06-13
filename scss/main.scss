@@ -160,7 +160,9 @@ aside.onebox {
 .groups-header-filters,
 .user-nav__preferences-interface,
 .user-nav__preferences-navigation-menu,
-.user-nav__preferences-ai {
+.user-nav__preferences-ai,
+.user-nav__activity-read,
+.category-quienes-somos .top-lists {
   display: none !important;
 }
 
@@ -279,5 +281,45 @@ aside.onebox {
 }
 
 .message-panel__inboxes .message-panel__inbox:nth-last-child {
+  display: none;
+}
+
+// Buttons on ending topics with normal line-height
+button [title="similares"] .d-button-label,
+button [title="similares"] .d-button-label {
+  line-height: normal;
+}
+
+// No border on similar/unread topics
+.more-topics__container .nav {
+  border-bottom: none;
+}
+
+// Less gap on 'more topics' desktop
+.topic-list-body {
+  gap: 1em;
+}
+
+// Prevent weird spacing on user menu
+.custom-user-menu-content .fk-d-menu__profile-tab li.preferences {
+  padding-bottom: none;
+}
+
+// Prevent weird hover on more-topics buttons
+.discourse-no-touch .more-topics__container .nav li .btn:hover {
+  background: none;
+}
+
+// Same text for all sidebar makes sense
+.sidebar-section-link-wrapper[data-list-item-name="all-categories"],
+.sidebar-section-link-wrapper[data-list-item-name="all-tags"],
+.sidebar-section-link-wrapper[data-list-item-name="configure-default-navigation-menu-tags"] {
+  font-size: inherit;
+}
+
+//  Hide repeated trust_levels
+.group-box [data-group-name="trust_level_1"],
+.group-box [data-group-name="trust_level_2"],
+.group-box [data-group-name="trust_level_3"] {
   display: none;
 }

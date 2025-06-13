@@ -263,3 +263,32 @@ body.f-nav-hidden:not(
 .sidebar-wrapper .sidebar-section-link [data-link-name="all-categories"] {
   font-size: var(--font-up-1);
 }
+
+// Vertical navbar on profile
+
+.new-user-wrapper .user-navigation-secondary {
+  float: left;
+}
+
+.new-user-wrapper .user-navigation-secondary .nav-pills {
+  flex-direction: column;
+}
+
+.new-user-wrapper .user-navigation .nav-pills li a {
+  justify-content: unset;
+}
+
+// Padding for nav on mobile
+.more-topics__container .more-topics__list .topic-list-body {
+  padding-top: 3.3rem;
+}
+
+// No border on end (prevent navbar redundance)
+.more-topics__container
+  .more-topics__list
+  .topic-list-body
+  .topic-list-item:last-of-type {
+  border-bottom: none;
+}
+
+// No weird background-color on mobile (only on desktop)
