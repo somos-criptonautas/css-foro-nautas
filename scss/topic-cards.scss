@@ -330,9 +330,6 @@
     }
 
     @include viewport.from(lg) {
-    }
-
-    @include viewport.from(lg) {
       position: absolute;
       right: 1rem;
       top: 0;
