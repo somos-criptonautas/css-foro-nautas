@@ -22,12 +22,12 @@
   flex-direction: column;
   gap: 1.25em;
 
-  @include breakpoint(medium) {
+  @include viewport.until(medium) {
     gap: 0.5em;
     padding: 0 0.5em;
   }
 
-  @include breakpoint(mobile-extra-large) {
+  @include viewport.until(mobile-extra-large) {
     gap: 0;
     padding: 0;
   }
@@ -97,10 +97,8 @@
       grid-template-areas:
         "bulk-select creator title title title status"
         "bulk-select . category activity activity . ";
-    }
 
-    &.has-replies {
-      @include viewport.until(sm) {
+      &.has-replies {
         grid-template-areas:
           "bulk-select creator title title title status"
           "bulk-select . category likes-replies activity . ";
@@ -204,7 +202,7 @@
       oklch(from var(--category-badge-color) 45% calc(c * 0.5) h)
     );
 
-    @include breakpoint(tablet) {
+    @include viewport.until(tablet) {
       padding: 0.25em 0.5rem;
       font-size: var(--font-down-2);
     }
@@ -331,6 +329,9 @@
     }
 
     @include viewport.from(lg) {
+    }
+
+    @include viewport.from(lg) {
       position: absolute;
       right: 1rem;
       top: 0;
@@ -340,6 +341,7 @@
 
     svg {
       color: var(--status-color);
+
       @include viewport.from(lg) {
         font-size: var(--font-down-1);
       }
