@@ -306,6 +306,7 @@
     align-items: center;
     padding: 0.2em 0.5rem;
     font-size: var(--font-down-2);
+
     @include viewport.from(lg) {
       font-size: var(--font-down-3);
     }
@@ -463,7 +464,6 @@
     .topic-status-data {
       display: none;
     }
-
     grid-template-areas:
       "creator title title title dropdown"
       ". category activity activity .";
@@ -531,6 +531,7 @@
       grid-template-areas:
         "creator title title title dropdown"
         "category category activity metadata . ";
+
       @include viewport.until(sm) {
         grid-template-areas:
           "metadata metadata metadata metadata dropdown"
