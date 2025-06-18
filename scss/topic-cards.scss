@@ -22,12 +22,12 @@
   flex-direction: column;
   gap: 1.25em;
 
-  @include viewport.until(medium) {
+  @include viewport.until(lg) {
     gap: 0.5em;
     padding: 0 0.5em;
   }
 
-  @include viewport.until(mobile-extra-large) {
+  @include viewport.until(sm) {
     gap: 0;
     padding: 0;
   }
@@ -90,6 +90,12 @@
       grid-template-areas:
         "bulk-select creator title title title status"
         "bulk-select category category activity likes-replies likes-replies";
+
+      @include viewport.until(sm) {
+        grid-template-areas:
+          "bulk-select creator title title title status"
+          "bulk-select . category likes-replies activity . ";
+      }
     }
 
     @include viewport.until(sm) {
@@ -97,12 +103,6 @@
       grid-template-areas:
         "bulk-select creator title title title status"
         "bulk-select . category activity activity . ";
-
-      &.has-replies {
-        grid-template-areas:
-          "bulk-select creator title title title status"
-          "bulk-select . category likes-replies activity . ";
-      }
     }
   }
 
@@ -202,7 +202,7 @@
       oklch(from var(--category-badge-color) 45% calc(c * 0.5) h)
     );
 
-    @include viewport.until(tablet) {
+    @include viewport.until(md) {
       padding: 0.25em 0.5rem;
       font-size: var(--font-down-2);
     }
@@ -652,6 +652,10 @@ body.user-messages-page {
     grid-template-areas: "title activity" "posters .";
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
+
+    &.has-replies {
+      grid-template-areas: "title activity" "posters .";
+    }
 
     &:hover {
       .discourse-no-touch & {
