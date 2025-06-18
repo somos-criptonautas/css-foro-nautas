@@ -322,3 +322,16 @@ button [title="similares"] .d-button-label {
 .group-box [data-group-name="trust_level_3"] {
   display: none;
 }
+
+// Style journal plugin
+.topic-post.comment .topic-body .regular .post-menu-area,
+div.topic-post.comment .topic-body .who-liked,
+div.topic-post.comment .topic-body .who-read {
+  background: unset;
+  border-top: unset;
+}
+
+.topic-post.comment {
+  padding-left: 23px;
+  padding-bottom: 30px;
+}
