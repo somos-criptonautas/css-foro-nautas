@@ -207,10 +207,6 @@ aside.onebox {
   content: "@randoms son @traders con estos 9:";
 }
 
-.badge-grouping:nth-child(4) {
-  display: none;
-}
-
 #reply-control.draft {
   padding: 0.5rem 0;
 }
@@ -334,4 +330,25 @@ div.topic-post.comment .topic-body .who-read {
 .topic-post.comment {
   padding-left: 23px;
   padding-bottom: 30px;
+}
+
+// Chat bigger font fix
+.chat-drawer-content {
+  font-size: var(--font-down-2);
+}
+
+// Hide default trust_levels
+
+.group-box[data-group-name="trust_level_1"],
+.group-box[data-group-name="trust_level_2"],
+.group-box[data-group-name="trust_level_3"],
+.group-box[data-group-name="trust_level_4"] {
+  display: none !important;
+}
+
+.select-kit-collection .select-kit-row[data-value="trust_level_1"],
+.select-kit-collection .select-kit-row[data-value="trust_level_2"],
+.select-kit-collection .select-kit-row[data-value="trust_level_3"],
+.select-kit-collection .select-kit-row[data-value="trust_level_4"] {
+  display: none !important;
 }
