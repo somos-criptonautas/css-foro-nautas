@@ -277,11 +277,6 @@ body.f-nav-hidden:not(
   justify-content: unset;
 }
 
-// Padding for nav on mobile
-.more-topics__container .more-topics__list .topic-list-body {
-  padding-top: 3.3rem;
-}
-
 // No border on end (prevent navbar redundance)
 .more-topics__container
   .more-topics__list
@@ -290,4 +285,7 @@ body.f-nav-hidden:not(
   border-bottom: none;
 }
 
-// No weird background-color on mobile (only on desktop)
+// Fix chat thread title size
+.c-user-thread .chat__thread-title__name {
+  font-size: var(--font-up-1);
+}
