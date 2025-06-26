@@ -79,7 +79,7 @@ body:not(.has-full-page-chat, .wizard) {
       --main-grid-gap: 0;
     }
 
-    @media screen and (width >= 768px) {
+    @media screen and (min-width: 768px) {
       gap: var(--main-grid-gap);
     }
 
@@ -344,7 +344,6 @@ div.topic-post.comment .topic-body .who-read {
 }
 
 // Hide default trust_levels
-
 .group-box[data-group-name="trust_level_1"],
 .group-box[data-group-name="trust_level_2"],
 .group-box[data-group-name="trust_level_3"],
