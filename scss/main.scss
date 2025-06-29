@@ -379,15 +379,16 @@ div.topic-post.comment .topic-body .who-read {
   display: none;
 }
 
-.groups-boxes .group-box [data-group-name="moderadores"],
-.groups-boxes .group-box [data-group-name="admins"] {
-  display: none;
+.leaderboard .winner.-position1 .winner__avatar img,
+.leaderboard .winner.-position3 .winner__avatar img {
+  border-color: #c4c4c4;
+  background-color: #d6d6d6;
 }
 
-.groups-boxes
-  .group-box:not([data-group-name="voluntarios"])
-  .groups-boxes
-  .group-box
-  .group-membership {
-  display: none;
+.leaderboard .winner.-position1 .winner__rank,
+.leaderboard .winner.-position3 .winner__rank {
+  background-color: #c4c4c4;
+}
+.leaderboard .winner {
+  margin: 0.33rem;
 }

@@ -265,8 +265,14 @@ body.f-nav-hidden:not(
 }
 
 // Vertical navbar on profile
-.new-user-wrapper .user-navigation-secondary {
-  float: left;
+.new-user-content-wrapper {
+  display: flex;
+}
+
+.user-navigation-secondary {
+  margin: 1.5rem 1.5rem 0.5rem 0.5rem;
+  font-size: var(--font-0);
+  min-width: 23%;
 }
 
 .new-user-wrapper .user-navigation-secondary .nav-pills {
@@ -275,6 +281,10 @@ body.f-nav-hidden:not(
 
 .new-user-wrapper .user-navigation .nav-pills li a {
   justify-content: unset;
+}
+// [EXPERIMENTAL] Hiding activity switchs for MPs vertical navbar design
+body.user-activity-page .user-navigation .user-navigation-secondary {
+  display: none;
 }
 
 // No border on end (prevent navbar redundance)
@@ -288,4 +298,13 @@ body.f-nav-hidden:not(
 // Fix chat thread title size
 .c-user-thread .chat__thread-title__name {
   font-size: var(--font-up-1);
+}
+
+// Hide stuff on profile
+
+.user-preferences .form-vertical .control-group .pref-title,
+.user-preferences .form-vertical .control-group .pref-flair,
+.user-preferences .form-vertical .control-group .pref-title,
+.user-preferences .form-vertical .control-group .pref-email-settings {
+  display: none;
 }
