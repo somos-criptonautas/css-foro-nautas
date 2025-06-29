@@ -252,7 +252,7 @@ aside.onebox {
 .sidebar-section-link [data-link-name="preguntas"] .icon svg,
 .sidebar-section-link [data-link-name="curso"] a,
 .sidebar-section-link [data-link-name="curso"] .icon svg {
-  color: #be99f8;
+  color: #be99f8 !important;
 }
 
 // ** Invert search-box on search page ** //
@@ -363,4 +363,31 @@ div.topic-post.comment .topic-body .who-read {
   .sidebar-section-link-wrapper
   .sidebar-section-link {
   padding: 0.3rem 1rem;
+}
+
+// styling
+.more-topics__list-title {
+  font-size: var(--font-up-2);
+}
+
+.badge-card .badge-contents .badge-icon.badge-type-gold .fa {
+  color: unset !important;
+}
+
+.leaderboard .winner.-position1 .winner__crown,
+.leaderboard .ranking-col-names {
+  display: none;
+}
+
+.groups-boxes .group-box [data-group-name="moderadores"],
+.groups-boxes .group-box [data-group-name="admins"] {
+  display: none;
+}
+
+.groups-boxes
+  .group-box:not([data-group-name="voluntarios"])
+  .groups-boxes
+  .group-box
+  .group-membership {
+  display: none;
 }
