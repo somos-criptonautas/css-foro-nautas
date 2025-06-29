@@ -397,3 +397,14 @@ div.topic-post.comment .topic-body .who-read {
 li.sidebar-section-link-wrapper[data-category-id="37"] {
   display: none !important;
 }
+
+// [EXPERIMENTAL] Hiding activity switchs for MPs vertical navbar design
+body.user-activity-page .user-navigation .user-navigation-secondary {
+  display: none !important;
+}
+
+// Workaround on MP messages for new User UI
+
+body.user-messages-page .new-user-wrapper .user-navigation-secondary {
+  display: unset;
+}

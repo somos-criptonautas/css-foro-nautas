@@ -274,17 +274,15 @@ body.f-nav-hidden:not(
   font-size: var(--font-0);
   min-width: 23%;
 }
-
+.new-user-wrapper .user-navigation-secondary {
+  height: 100%;
+}
 .new-user-wrapper .user-navigation-secondary .nav-pills {
   flex-direction: column;
 }
 
 .new-user-wrapper .user-navigation .nav-pills li a {
   justify-content: unset;
-}
-// [EXPERIMENTAL] Hiding activity switchs for MPs vertical navbar design
-body.user-activity-page .user-navigation .user-navigation-secondary {
-  display: none;
 }
 
 // No border on end (prevent navbar redundance)
