@@ -392,3 +392,8 @@ div.topic-post.comment .topic-body .who-read {
 .leaderboard .winner {
   margin: 0.33rem;
 }
+
+.anon .sidebar-section-wrapper.sidebar-section[data-section-name="mas-apps"],
+li.sidebar-section-link-wrapper[data-category-id="37"] {
+  display: none !important;
+}
