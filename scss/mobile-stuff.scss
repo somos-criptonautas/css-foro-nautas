@@ -274,9 +274,11 @@ body.f-nav-hidden:not(
   font-size: var(--font-0);
   min-width: 23%;
 }
+
 .new-user-wrapper .user-navigation-secondary {
   height: 100%;
 }
+
 .new-user-wrapper .user-navigation-secondary .nav-pills {
   flex-direction: column;
 }
@@ -299,10 +301,8 @@ body.f-nav-hidden:not(
 }
 
 // Hide stuff on profile
-
 .user-preferences .form-vertical .control-group .pref-title,
 .user-preferences .form-vertical .control-group .pref-flair,
-.user-preferences .form-vertical .control-group .pref-title,
 .user-preferences .form-vertical .control-group .pref-email-settings {
   display: none;
 }
