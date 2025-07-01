@@ -418,3 +418,27 @@ ul.ai-helper-optionsli[data-value="markdown_table"],
 .groups-boxes .group-box [data-group-name="admins"] {
   display: none;
 }
+
+// Style TOCs
+
+.d-toc-main #d-toc li.d-toc-item {
+  padding-left: 0.33em;
+}
+
+.d-toc-main #d-toc li.d-toc-item.direct-active > a::before {
+  width: 2px;
+}
+.d-toc-main #d-toc > ul > li > ul li.direct-active > a::before {
+  margin-left: -5px;
+}
+
+.d-toc-heading:not(first-child) {
+  padding-top: 0.33em;
+}
+
+// Hiding some profile card info
+
+.user-main .about .secondary.trust-level,
+.user-main .about .secondary.groups {
+  display: none;
+}
