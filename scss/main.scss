@@ -370,7 +370,9 @@ div.topic-post.comment .topic-body .who-read {
   font-size: var(--font-up-2);
 }
 
-.badge-card .badge-contents .badge-icon.badge-type-gold .fa {
+.badge-card .badge-contents .badge-icon.badge-type-gold .fa,
+.user-badge.badge-type-gold .fa,
+.user-card .badge-section .more-user-badges a.badge-type-gold .fa {
   color: unset !important;
 }
 
