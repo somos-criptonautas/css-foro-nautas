@@ -168,7 +168,8 @@ aside.onebox {
 .user-nav__preferences-navigation-menu,
 .user-nav__preferences-ai,
 .user-nav__activity-read,
-.category-quienes-somos .top-lists {
+.category-quienes-somos .top-lists,
+.sidebar-section-link-wrapper [data-list-item-name="activity-pub-about"] {
   display: none !important;
 }
 
@@ -351,10 +352,10 @@ div.topic-post.comment .topic-body .who-read {
   display: none !important;
 }
 
-.select-kit-collection .select-kit-row[data-value="trust_level_1"],
-.select-kit-collection .select-kit-row[data-value="trust_level_2"],
-.select-kit-collection .select-kit-row[data-value="trust_level_3"],
-.select-kit-collection .select-kit-row[data-value="trust_level_4"] {
+.select-kit .select-kit-row[data-name="trust_level_1"],
+.select-kit .select-kit-row[data-name="trust_level_2"],
+.select-kit .select-kit-row[data-name="trust_level_3"],
+.select-kit .select-kit-row[data-name="trust_level_4"] {
   display: none !important;
 }
 
@@ -449,4 +450,12 @@ ul.ai-helper-optionsli[data-value="markdown_table"],
 #list-area .show-more .alert {
   padding: 0.65rem 1.15rem;
   border-radius: 0.5rem;
+}
+
+// Hide redundant dropdowns on new posts
+
+.dropdown-menu__item [data-name="quote"],
+.dropdown-menu__item [data-name="toggle-whisper"],
+.dropdown-menu .shortcut {
+  display: none;
 }
