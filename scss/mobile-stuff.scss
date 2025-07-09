@@ -306,8 +306,9 @@ body.f-nav-hidden:not(
   display: none;
 }
 
-// Disable theme switcher
-.sidebar-footer-wrapper .sidebar-footer-actions-button.btn {
+// Disable theme switcher and Sidebar 'More'
+.sidebar-footer-wrapper .sidebar-footer-actions-button.btn,
+.sidebar-more-section-trigger {
   display: none;
 }
 
