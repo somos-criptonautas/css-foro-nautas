@@ -423,7 +423,6 @@ ul.ai-helper-optionsli[data-value="markdown_table"],
 }
 
 // Style TOCs
-
 .d-toc-main #d-toc li.d-toc-item {
   padding-left: 0.33em;
 }
@@ -431,6 +430,7 @@ ul.ai-helper-optionsli[data-value="markdown_table"],
 .d-toc-main #d-toc li.d-toc-item.direct-active > a::before {
   width: 2px;
 }
+
 .d-toc-main #d-toc > ul > li > ul li.direct-active > a::before {
   margin-left: -5px;
 }
@@ -440,13 +440,13 @@ ul.ai-helper-optionsli[data-value="markdown_table"],
 }
 
 // Hiding some profile card info
-
 .user-main .about .secondary.trust-level,
 .user-main .about .secondary.groups {
   display: none;
 }
 
 // Update posts message
+
 #list-area .show-more .alert {
   padding: 0.65rem 1.15rem;
   border-radius: 0.5rem;
