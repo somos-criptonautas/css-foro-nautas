@@ -308,12 +308,18 @@ body.f-nav-hidden:not(
 
 // Disable theme switcher and Sidebar 'More'
 .sidebar-footer-wrapper .sidebar-footer-actions-button.btn,
-.sidebar-more-section-trigger {
-  display: none;
+.fk-d-menu__trigger {
+  display: none !important;
 }
 
 // Some icons on white
 
 .flair-agoristas {
   color: #f1f1f1;
+}
+
+// More stuff
+
+img.emoji {
+  vertical-align: unset;
 }
