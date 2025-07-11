@@ -293,31 +293,3 @@ body.f-nav-hidden:not(
   .topic-list-item:last-of-type {
   border-bottom: none;
 }
-
-// Fix chat thread title size
-.c-user-thread .chat__thread-title__name {
-  font-size: var(--font-up-1);
-}
-
-// Hide stuff on profile
-.user-preferences .form-vertical .control-group .pref-title,
-.user-preferences .form-vertical .control-group .pref-flair,
-.user-preferences .form-vertical .control-group .pref-email-settings {
-  display: none;
-}
-
-// Disable theme switcher and Sidebar 'More'
-.sidebar-footer-wrapper .sidebar-footer-actions-button.btn,
-.fk-d-menu__trigger {
-  display: none !important;
-}
-
-// Some icons on white
-.flair-agoristas {
-  color: #f1f1f1;
-}
-
-// More stuff
-img.emoji {
-  vertical-align: unset;
-}

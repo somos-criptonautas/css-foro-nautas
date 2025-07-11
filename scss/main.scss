@@ -415,7 +415,8 @@ body.user-messages-page .new-user-wrapper .user-navigation-secondary {
 // Disable some AI Helper functions
 ul.ai-helper-optionsli[data-value="replace_dates"],
 ul.ai-helper-optionsli[data-value="markdown_table"],
-
+// Hide redundant groups
+ul.ai-helper-optionsli[data-value="markdown_table"],
 // Hide redundant groups
 .groups-boxes .group-box [data-group-name="moderadores"],
 .groups-boxes .group-box [data-group-name="admins"] {
@@ -458,4 +459,53 @@ ul.ai-helper-optionsli[data-value="markdown_table"],
 .dropdown-menu__item [data-name="toggle-whisper"],
 .dropdown-menu .shortcut {
   display: none;
+}
+
+// Fix chat thread title size
+.c-user-thread .chat__thread-title__name {
+  font-size: var(--font-up-1);
+}
+
+// Hide stuff on profile
+.user-preferences .form-vertical .control-group .pref-title,
+.user-preferences .form-vertical .control-group .pref-flair,
+.user-preferences .form-vertical .control-group .pref-email-settings {
+  display: none;
+}
+
+// Disable theme switcher and Sidebar 'More'
+.sidebar-footer-wrapper .sidebar-footer-actions-button.btn,
+.fk-d-menu__trigger {
+  display: none !important;
+}
+
+// Some icons on white
+.flair-agoristas {
+  color: #f1f1f1;
+}
+
+// More stuff
+img.emoji {
+  vertical-align: unset;
+}
+[data-wrap="button"] {
+  text-align: center;
+  padding-top: 0.3rem;
+}
+[data-wrap="button"] a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-weight: normal;
+  color: var(--d-button-default-text-color);
+  background-color: var(--d-button-default-bg-color);
+  border-radius: var(--d-button-border-radius);
+  transition: var(--d-button-transition);
+  cursor: pointer;
+  font-size: var(--font-0);
+  line-height: normal;
+  box-sizing: border-box;
+  padding: 0.5em 0.65em;
+  border: var(--d-button-border);
 }
