@@ -413,10 +413,11 @@ body.user-messages-page .new-user-wrapper .user-navigation-secondary {
 }
 
 // Disable some AI Helper functions
-ul.ai-helper-optionsli[data-value="replace_dates"],
-ul.ai-helper-optionsli[data-value="markdown_table"],
-// Hide redundant groups
-ul.ai-helper-optionsli[data-value="markdown_table"],
+ul.ai-helper-options li[data-value="replace_dates"],
+ul.ai-helper-options li[data-value="markdown_table"] {
+  display: none;
+}
+
 // Hide redundant groups
 .groups-boxes .group-box [data-group-name="moderadores"],
 .groups-boxes .group-box [data-group-name="admins"] {
@@ -447,14 +448,12 @@ ul.ai-helper-optionsli[data-value="markdown_table"],
 }
 
 // Update posts message
-
 #list-area .show-more .alert {
   padding: 0.65rem 1.15rem;
   border-radius: 0.5rem;
 }
 
 // Hide redundant dropdowns on new posts
-
 .dropdown-menu__item [data-name="quote"],
 .dropdown-menu__item [data-name="toggle-whisper"],
 .dropdown-menu .shortcut {
@@ -488,10 +487,12 @@ ul.ai-helper-optionsli[data-value="markdown_table"],
 img.emoji {
   vertical-align: unset;
 }
+
 [data-wrap="button"] {
   text-align: center;
   padding-top: 0.3rem;
 }
+
 [data-wrap="button"] a {
   display: inline-flex;
   align-items: center;
@@ -508,4 +509,20 @@ img.emoji {
   box-sizing: border-box;
   padding: 0.5em 0.65em;
   border: var(--d-button-border);
+}
+
+// Centered videos
+[data-wrap="centered-video"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Restrict max-width if your vertical video is too tall
+[data-wrap="centered-video"] video,
+[data-wrap="centered-video"] iframe {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
 }
