@@ -509,6 +509,15 @@ img.emoji {
   box-sizing: border-box;
   padding: 0.5em 0.65em;
   border: var(--d-button-border);
+  background-color: var(--accent-color);
+  color: var(--accent-text-color);
+}
+
+[data-wrap="button"] a:hover {
+  background: light-dark(
+    oklch(from var(--accent-color) 40% c h),
+    oklch(from var(--accent-color) 50% c h)
+  );
 }
 
 // Centered videos
