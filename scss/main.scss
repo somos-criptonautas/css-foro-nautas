@@ -2,14 +2,7 @@
 
 // Base font size (matches Discourse default)
 html {
-  font-size: 16px;
-}
-
-// Increase font size by 10% on desktop
-@include viewport.from(xl) {
-  html {
-    font-size: 110%;
-  }
+  font-size: 18px;
 }
 
 :root {
@@ -473,8 +466,8 @@ ul.ai-helper-options li[data-value="markdown_table"] {
 }
 
 // Disable theme switcher and Sidebar 'More'
-.sidebar-footer-wrapper .sidebar-footer-actions-button.btn,
-.sidebar-more-section-trigger {
+.sidebar-more-section-trigger:first-of-type,
+.user-color-palette-selector-trigger {
   display: none !important;
 }
 
@@ -534,4 +527,23 @@ img.emoji {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
+}
+
+// Heading on quotes titles
+
+.quote .title a {
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+}
+
+.select-kit .select-kit-header {
+  padding: 0.45em 0.65em;
+}
+
+.topic-list-body .topic-list-item .topic-status-card {
+  margin-right: 0.15rem;
+}
+
+.more-topics__lists {
+  margin-bottom: 2rem;
 }
