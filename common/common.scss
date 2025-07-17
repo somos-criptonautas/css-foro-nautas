@@ -1,5 +1,5 @@
 @import "box-view";
-@import "common/foundation/mixins/viewport";
+@use "lib/viewport";
 @import "buttons";
 @import "chat";
 @import "categories-view";
