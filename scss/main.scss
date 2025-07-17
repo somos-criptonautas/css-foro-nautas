@@ -73,7 +73,7 @@ body:not(.has-full-page-chat, .wizard) {
       --main-grid-gap: 0;
     }
 
-    @media screen and (width >= 768px) {
+    @media screen and (min-width: 768px) {
       gap: var(--main-grid-gap);
     }
 
@@ -493,8 +493,6 @@ img.emoji {
   justify-content: center;
   margin: 0;
   font-weight: normal;
-  color: var(--d-button-default-text-color);
-  background-color: var(--d-button-default-bg-color);
   border-radius: var(--d-button-border-radius);
   transition: var(--d-button-transition);
   cursor: pointer;
@@ -531,7 +529,6 @@ img.emoji {
 }
 
 // Heading on quotes titles
-
 .quote .title a {
   font-family: var(--heading-font-family);
   font-weight: 500;
