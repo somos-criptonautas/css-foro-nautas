@@ -1,5 +1,3 @@
-@use "lib/viewport";
-
 // Full width layout. Ported from the Discourse Full Width theme component here
 // https://meta.discourse.org/t/discourse-full-width-component/292496, which we
 // intend to move into core over time.
@@ -25,7 +23,7 @@ $sidebar-width: 17em;
   body:not(.has-sidebar-page) & {
     max-width: unset;
 
-    @include viewport.until(sm) {
+    @media screen and (max-width: 576px) {
       max-width: 25vw;
     }
   }
@@ -105,7 +103,7 @@ $sidebar-width: 17em;
         grid-area: extra-info;
         white-space: nowrap;
 
-        @include viewport.until(md) {
+        @media screen and (max-width: 768px) {
           display: none;
         }
       }
@@ -129,7 +127,7 @@ $sidebar-width: 17em;
         // at narrower widths, when 1fr = 0
         // we can center without matching the sidebar's width
         // which allows the title to take up the remaining width
-        @include viewport.until(xl) {
+        @media screen and (max-width: 1400px) {
           grid-template-columns:
             calc(var(--d-sidebar-width) - 11px)
             1fr
@@ -138,7 +136,7 @@ $sidebar-width: 17em;
             auto;
         }
 
-        @include viewport.until(lg) {
+        @media screen and (max-width: 1000px) {
           gap: 0.5em;
         }
 
@@ -191,11 +189,11 @@ $sidebar-width: 17em;
 .header-search--enabled .floating-search-input-wrapper {
   grid-area: extra-info;
 
-  @include viewport.until(md) {
+  @media screen and (max-width: 768px) {
     grid-area: rspace;
   }
 
-  @include viewport.until(sm) {
+  @media screen and (max-width: 576px) {
     display: none;
   }
 }
@@ -210,8 +208,7 @@ body.has-sidebar-page {
     padding: 0;
   }
 
-  @include viewport.from(xl) {
-    // Approximating complex calc with xl
+  @media screen and (min-width: calc($reply-area-max-width + ($sidebar-width * 2))) {
     #reply-control.show-preview {
       margin-left: auto;
       margin-right: auto;
@@ -222,28 +219,23 @@ body.has-sidebar-page {
     }
   }
 
-  @include viewport.until(xl) {
-    // Approximating complex calc with xl
-    @include viewport.from(lg) {
-      // Approximating complex calc with lg
-      #reply-control.show-preview:not(.fullscreen) {
-        margin-left: $sidebar-width;
-        width: auto;
+  @media screen and (max-width: calc($reply-area-max-width + ($sidebar-width * 2))) and (min-width: calc($reply-area-max-width + calc($sidebar-width / 2))) {
+    #reply-control.show-preview:not(.fullscreen) {
+      margin-left: $sidebar-width;
+      width: auto;
 
-        // overruling new core composer changes
-        max-width: $reply-area-max-width;
-        transform: none;
-      }
+      // overruling new core composer changes
+      max-width: $reply-area-max-width;
+      transform: none;
+    }
 
-      .sidebar-container {
-        height: auto;
-      }
+    .sidebar-container {
+      height: auto;
     }
   }
 
   // overruling new core composer changes
-  @include viewport.from(lg) {
-    // Approximating $reply-area-max-width with lg
+  @media screen and (min-width: $reply-area-max-width) {
     #reply-control.show-preview:not(.fullscreen) {
       max-width: $reply-area-max-width;
       transform: none;
@@ -273,7 +265,7 @@ body.sidebar-animate {
 }
 
 // provides some extra space for login buttons
-@include viewport.from(xl) {
+@media screen and (min-width: 1400px) {
   .anon {
     .d-header .panel {
       grid-column-start: -4;
