@@ -53,7 +53,7 @@
 .container.posts {
   grid-template-columns: auto 8em;
 
-  @media screen and (max-width: 924px) {
+  @include viewport.until(lg) {
     grid-template-columns: auto auto;
   }
 

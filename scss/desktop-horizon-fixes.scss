@@ -13,7 +13,7 @@
     grid-area: bulk-select;
     margin-left: -0.5em;
 
-    @media screen and (max-width: 576px) {
+    @include viewport.until(sm) {
       margin-top: 0;
 
       label {

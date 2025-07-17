@@ -129,7 +129,7 @@ $sidebar-width: 17em;
         // at narrower widths, when 1fr = 0
         // we can center without matching the sidebar's width
         // which allows the title to take up the remaining width
-        @media screen and (max-width: 1400px) {
+        @include viewport.until(xl) {
           grid-template-columns:
             calc(var(--d-sidebar-width) - 11px)
             1fr
@@ -138,7 +138,7 @@ $sidebar-width: 17em;
             auto;
         }
 
-        @media screen and (max-width: 1000px) {
+        @include viewport.until(lg) {
           gap: 0.5em;
         }
 
@@ -210,7 +210,8 @@ body.has-sidebar-page {
     padding: 0;
   }
 
-  @media screen and (min-width: calc($reply-area-max-width + ($sidebar-width * 2))) {
+  @include viewport.from(xl) {
+    // Approximating complex calc with xl
     #reply-control.show-preview {
       margin-left: auto;
       margin-right: auto;
@@ -221,23 +222,28 @@ body.has-sidebar-page {
     }
   }
 
-  @media screen and (max-width: calc($reply-area-max-width + ($sidebar-width * 2))) and (min-width: calc($reply-area-max-width + calc($sidebar-width / 2))) {
-    #reply-control.show-preview:not(.fullscreen) {
-      margin-left: $sidebar-width;
-      width: auto;
+  @include viewport.until(xl) {
+    // Approximating complex calc with xl
+    @include viewport.from(lg) {
+      // Approximating complex calc with lg
+      #reply-control.show-preview:not(.fullscreen) {
+        margin-left: $sidebar-width;
+        width: auto;
 
-      // overruling new core composer changes
-      max-width: $reply-area-max-width;
-      transform: none;
-    }
+        // overruling new core composer changes
+        max-width: $reply-area-max-width;
+        transform: none;
+      }
 
-    .sidebar-container {
-      height: auto;
+      .sidebar-container {
+        height: auto;
+      }
     }
   }
 
   // overruling new core composer changes
-  @media screen and (min-width: $reply-area-max-width) {
+  @include viewport.from(lg) {
+    // Approximating $reply-area-max-width with lg
     #reply-control.show-preview:not(.fullscreen) {
       max-width: $reply-area-max-width;
       transform: none;
@@ -267,7 +273,7 @@ body.sidebar-animate {
 }
 
 // provides some extra space for login buttons
-@media screen and (min-width: 1400px) {
+@include viewport.from(xl) {
   .anon {
     .d-header .panel {
       grid-column-start: -4;
