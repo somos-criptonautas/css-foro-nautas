@@ -220,7 +220,7 @@
   }
 }
 
-@include viewport.until(sm) {
+/* @include viewport.until(sm) {
   .category-list.with-topics {
     margin-inline: 1rem;
 
@@ -260,7 +260,7 @@
       padding-top: 0;
     }
   }
-}
+} */
 
 .category-boxes.with-subcategories {
   .category-logo {
