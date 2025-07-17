@@ -44,19 +44,19 @@ export default {
       api.registerValueTransformer(
         "topic-list-columns",
         ({ value: columns }) => {
-          columns.add("topic-status", {
-            item: TopicStatus,
-            after: "topic-author",
-          });
+          // columns.add("topic-status", {
+          //   item: TopicStatus,
+          //   after: "topic-author",
+          // });
           columns.add("topic-category", {
             item: TopicCategory,
             after: "topic-status",
           });
 
-          columns.add("topic-likes-replies", {
-            item: TopicReplies,
-            after: "topic-author-avatar",
-          });
+          // columns.add("topic-likes-replies", {
+          //   item: TopicReplies,
+          //   after: "topic-author-avatar",
+          // });
           columns.add("topic-creator", {
             item: TopicCreator,
             after: "topic-author-avatar",

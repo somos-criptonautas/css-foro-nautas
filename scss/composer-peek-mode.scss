@@ -2,6 +2,12 @@
   display: none;
 }
 
+@media (width < 1300px) {
+  .peek-mode-toggle {
+    display: none !important;
+  }
+}
+
 @media (width >= 1300px) {
   html:not(.fullscreen-composer) {
     .peek-mode-toggle svg {
