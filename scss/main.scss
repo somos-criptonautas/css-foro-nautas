@@ -551,3 +551,10 @@ img.emoji {
 .campaign-banner-info svg {
   display: none !important;
 }
+
+// Big button on Subscriptions campaigns
+.campaign-banner .btn.close {
+  top: 0.5rem !important;
+  right: 0.5rem !important;
+  font-size: 1.3rem !important;
+}
