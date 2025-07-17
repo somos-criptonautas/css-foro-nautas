@@ -11,7 +11,7 @@ html {
 html:not(:has(.has-full-page-chat)) {
   background-color: var(--background-color);
 
-  @media screen and (max-width: 576px) {
+  @media (width <= 576px) {
     background-color: var(--d-content-background);
   }
 }
@@ -19,7 +19,7 @@ html:not(:has(.has-full-page-chat)) {
 body {
   -webkit-font-smoothing: antialiased;
 
-  @media screen and (max-width: 576px) {
+  @media (width <= 576px) {
     background-color: var(--d-content-background);
   }
 }
@@ -41,7 +41,7 @@ body.has-full-page-chat:not(.has-sidebar-page) {
   #main-outlet-wrapper {
     gap: var(--main-grid-gap);
 
-    @media screen and (max-width: 1024px) {
+    @media (width <= 1024px) {
       gap: 0;
     }
   }
@@ -56,22 +56,22 @@ body.has-sidebar-page #main-outlet-wrapper {
 }
 
 body:not(.has-sidebar-page) #main-outlet-wrapper {
-  @media screen and (min-width: 1024px) {
+  @media (width >= 1024px) {
     grid-template-columns: 0 minmax(0, 1fr) 0;
   }
 }
 
 body:not(.has-full-page-chat, .wizard) {
-  @media screen and (min-width: 1200px) {
+  @media (width >= 1200px) {
     background-color: var(--background-color);
   }
 
   #main-outlet-wrapper {
-    @media screen and (max-width: 1024px) {
+    @media (width <= 1024px) {
       --main-grid-gap: 0;
     }
 
-    @media screen and (min-width: 768px) {
+    @media (width >= 768px) {
       gap: var(--main-grid-gap);
     }
 
@@ -82,7 +82,7 @@ body:not(.has-full-page-chat, .wizard) {
       border-radius: var(--d-border-radius-large);
       background-color: var(--d-content-background);
 
-      @media screen and (max-width: 1024px) {
+      @media (width <= 1024px) {
         border-radius: 0;
       }
 
@@ -91,7 +91,7 @@ body:not(.has-full-page-chat, .wizard) {
       }
 
       > *:not(.experimental-screen, .activate-account) {
-        @media screen and (min-width: 1024px) {
+        @media (width >= 1024px) {
           box-sizing: border-box;
           max-width: 1000px;
           margin-inline: auto;
@@ -102,7 +102,7 @@ body:not(.has-full-page-chat, .wizard) {
   }
 }
 
-@media screen and (max-width: 576px) {
+@media (width <= 576px) {
   .welcome-banner {
     display: none;
   }
@@ -110,7 +110,7 @@ body:not(.has-full-page-chat, .wizard) {
 
 #list-area {
   .show-more.has-topics {
-    @media screen and (min-width: 1024px) {
+    @media (width >= 1024px) {
       width: auto;
       right: 50%;
       transform: translateX(50%);

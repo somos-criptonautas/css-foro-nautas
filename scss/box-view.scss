@@ -1,4 +1,4 @@
-@media screen and (min-width: 1300px) {
+@media (width >= 1300px) {
   #main-outlet {
     border-top-right-radius: var(--d-border-radius-large);
     border-top-left-radius: var(--d-border-radius-large);
@@ -45,11 +45,11 @@
     display: none;
   }
 
-  @media screen and (max-width: 488px) {
+  @media (width <= 488px) {
     display: none;
   }
 
-  @media screen and (max-width: 768px) {
+  @media (width <= 768px) {
     display: none;
   }
 
@@ -92,7 +92,7 @@
     bottom: var(--main-grid-gap);
     left: var(--left-distance);
 
-    @media screen and (max-width: 768px) {
+    @media (width <= 768px) {
       bottom: calc(var(--d-border-radius-large) * 2);
     }
   }
@@ -102,7 +102,7 @@
     bottom: var(--main-grid-gap);
     left: calc(var(--right-distance) - var(--d-border-radius-large));
 
-    @media screen and (max-width: 768px) {
+    @media (width <= 768px) {
       bottom: calc(var(--d-border-radius-large) * 2);
     }
   }
@@ -116,7 +116,7 @@
     left: var(--left-distance);
     height: var(--main-grid-gap);
 
-    @media screen and (max-width: 768px) {
+    @media (width <= 768px) {
       height: calc(var(--d-border-radius-large) * 2);
     }
 
@@ -156,7 +156,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media (width >= 768px) {
   .with-topic-progress {
     bottom: calc(
       env(safe-area-inset-bottom) + var(--composer-height, 0px) +
@@ -165,7 +165,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media (width <= 768px) {
   .with-topic-progress {
     bottom: calc(
       env(safe-area-inset-bottom) + var(--composer-height, 0px) +
@@ -174,7 +174,7 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media (width <= 400px) {
   .with-topic-progress {
     bottom: calc(env(safe-area-inset-bottom) + var(--composer-height, 0px));
   }
